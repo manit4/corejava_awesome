@@ -1,0 +1,6 @@
+
+public class Task {
+	
+	int i = 4;
+
+}

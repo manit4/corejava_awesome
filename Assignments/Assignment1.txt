@@ -1,0 +1,22 @@
+Coding Challenge Day 1 (Week 1)
+
+# Todo Manager Sprint 1
+
+## Problem Statement
+
+Todo Manager is an application, which can Manage our Tasks and keep track of our Tasks. In
+the course of 3 week, we will be creating a Todo manager.
+
+## User Stories:-
+
+1. As a user I should be able to print my name on the screen
+2. As a user I should be able to list at least 5 tasks for the day.
+3. As a user I should be able to see all the tasks in increasing and decreasing order.
+4. As a user I should be able to see the repeated tasks.
+
+## Instructions:-
+
+1. Please use simple system.out.println to print the name
+2. Please use simple variables to store all tasks
+3. Please use simple if else to arrange the task in an order
+4. Please use if else to check the repeated tasks

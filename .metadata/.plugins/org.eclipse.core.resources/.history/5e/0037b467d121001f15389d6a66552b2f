@@ -1,0 +1,72 @@
+
+class Car {
+	
+	void steeringWheel() {
+		
+		System.out.println("inside steeringWheel() of Car");
+	}
+	void abs() {
+		
+		System.out.println("inside abs() of Car");
+	}
+}
+
+class Polo extends Car {
+	
+	void climateControl() {
+		
+		System.out.println("inside climateControl of Polo");
+	}
+	void antiBraking() {
+		
+		System.out.println("inside antiBraking of Polo");
+	}
+}
+
+public class Runner {
+	
+	public static void main(String[] args) {
+
+		Car car = new Car();     car.steeringWheel();   car.abs();
+		Polo polo = new Polo();  polo.antiBraking();     polo.climateControl();
+		
+	}
+
+}
+
+
+
+//class Car {
+//	
+//	void steeringWheel() {
+//		
+//		System.out.println("inside steeringWheel() of Car");
+//	}
+//	void abs() {
+//		
+//		System.out.println("inside abs() of Car");
+//	}
+//}
+//
+//class Polo  {
+//	
+//	void climateControl() {
+//		
+//		System.out.println("inside climateControl of Polo");
+//	}
+//	void antiBraking() {
+//		
+//		System.out.println("inside antiBraking of Polo");
+//	}
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//
+//		Car car = new Car();     car.steeringWheel();   car.abs();
+//		Polo polo = new Polo();  polo.antiBraking();     polo.climateControl();
+//		
+//	}
+//
+//}
