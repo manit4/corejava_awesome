@@ -3,9 +3,28 @@ public class TaskDAO {
 
 	Task[] tasks = new Task[2];
 
-	public void addTask(int taskId, String taskName, int labourAmount) {
+//	public void addTask(int taskId, String taskName, int labourAmount) {
+//
+//		Task task = new Task(taskId, taskName, labourAmount);
+//
+//		int counter = 0;
+//
+//		for (Task value : tasks) {
+//
+//			if (value == null) {
+//
+//				tasks[counter] = task;
+//				break;
+//			}
+//			counter++;
+//		}
+//		for (Task printTask : tasks) {
+//
+//			System.out.println(printTask);
+//		}
+//	}
 
-		Task task = new Task(taskId, taskName, labourAmount);
+	public void addTask(Task task) {
 
 		int counter = 0;
 
@@ -23,7 +42,8 @@ public class TaskDAO {
 			System.out.println(printTask);
 		}
 	}
-
+	
+	
 //	public String deleteTask(int taskId) {
 //		
 //		String message = "Deleted";

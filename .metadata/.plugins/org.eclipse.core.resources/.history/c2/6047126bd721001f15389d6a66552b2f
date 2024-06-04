@@ -1,0 +1,91 @@
+
+public class TaskDAO {
+
+	Task[] tasks = new Task[2];
+
+	public void addTask(int taskId, String taskName, int labourAmount) {
+
+		Task task = new Task(taskId, taskName, labourAmount);
+
+		int counter = 0;
+
+		for (Task value : tasks) {
+
+			if (value == null) {
+
+				tasks[counter] = task;
+				break;
+			}
+			counter++;
+		}
+		for (Task printTask : tasks) {
+
+			System.out.println(printTask);
+		}
+	}
+
+//	public String deleteTask(int taskId) {
+//		
+//		String message = "Deleted";
+//
+//		int counter = 0;
+//
+//		for (Task value : tasks) {
+//
+//			if (taskId == value.getTaskId()) {
+//
+//				tasks[counter] = null;
+//				break;
+//			}
+//			if(counter+1 == tasks.length) {
+//				message = "Not Deleted";
+//			}
+//			counter++;
+//		}
+//		for (Task printTask : tasks) {
+//
+//			System.out.println(printTask);
+//		}
+//		return message;
+//	}
+
+	public boolean deleteTask(int taskId) {
+
+		boolean status = true;
+
+		int counter = 0;
+
+		for (Task value : tasks) {
+
+			if (taskId == value.getTaskId()) {
+
+				tasks[counter] = null;
+				break;
+			}
+			if (counter + 1 == tasks.length) {
+				status = false;
+			}
+			counter++;
+		}
+		for (Task printTask : tasks) {
+
+			System.out.println(printTask);
+		}
+		return status;
+	}
+
+	public Task findTask(int taskId) {
+
+		Task task = null;
+
+		for (Task value : tasks) {
+
+			if (value.getTaskId() == taskId) {
+
+				task = value;
+			}
+		}
+		return task;
+	}
+
+}

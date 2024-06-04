@@ -6,6 +6,21 @@ public class TaskService {
 
 	private Scanner sc = new Scanner(System.in);
 
+//	public void saveTask() {
+//
+//		System.out.println("Enter Task Id");
+//		int taskId = sc.nextInt();
+//
+//		System.out.println("Enter Task Name");
+//		String tasKName = sc.next();
+//
+//		System.out.println("Enter the Labour Amount");
+//		int labourAmount = sc.nextInt();
+//
+//		taskDAO.addTask(taskId, tasKName, labourAmount);
+//	}
+	
+	
 	public void saveTask() {
 
 		System.out.println("Enter Task Id");
@@ -16,9 +31,14 @@ public class TaskService {
 
 		System.out.println("Enter the Labour Amount");
 		int labourAmount = sc.nextInt();
+		
+		Task task = new Task(taskId, tasKName, labourAmount);
 
-		taskDAO.addTask(taskId, tasKName, labourAmount);
+		taskDAO.addTask(task);
 	}
+	
+	
+	
 //	public void deleteTask() {
 //		
 //		System.out.println("Enter the Task Id to delete the Task!!");
