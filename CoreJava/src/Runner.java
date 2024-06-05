@@ -1,3 +1,359 @@
+
+interface A {//before version Java 8, you can have only abstract methods in an interface but from 
+			//Java 8 onwards , you can have implemented methods also but those methods should be
+		//eiter static method or default method....
+	
+	int FIRST_ADDRESS = 5;
+	
+	void add();
+	
+	static void sub() {
+		System.out.println("inside static sub of interface A");
+	}
+	
+	default void divide() {
+		System.out.println("inside divide default method of interface A");
+	}
+}
+
+public class Runner {
+	
+	public static void main(String[] args) {
+			
+	}
+}
+
+//interface below studied was limited only till Java 1.7 version...
+
+//interface Employee {
+//	
+//	void uniform();
+//}
+//
+//abstract class ITEmployee {
+//	
+//	void laptop() {
+//		System.out.println("inside laptop of ITEmployee");
+//	}
+//	abstract void programmingKnowledge();
+//}
+//
+//class Infosys extends ITEmployee implements Employee {
+//	
+//	public void uniform() {
+//		System.out.println("inside uniform of Infosys");
+//	}
+//
+//	void programmingKnowledge() {
+//		System.out.println("inside programmingKnowledge of Infosys");
+//	}
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//			
+//	}
+//}
+
+
+//
+//interface Employee {
+//	
+//	void uniform();
+//}
+//
+//class ITEmployee {
+//	
+//	void laptop() {
+//		System.out.println("inside laptop of ITEmployee");
+//	}
+//}
+//
+//class Infosys extends ITEmployee implements Employee {
+//	
+//	public void uniform() {
+//		System.out.println("inside uniform of Infosys");
+//	}
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//		
+//		
+//	}
+//}
+
+
+
+
+//
+//
+//interface Employee {
+//	
+//	void identityCard();
+//}
+//
+//interface ITEmployee extends Employee {//an interface can extend another interface but an interface can not
+//										//implement another interface....
+//	
+//	void laptop();
+//}
+//
+//interface MechanicalEmployee extends Employee {
+//	
+//	void hammer();
+//}
+//
+//class Infosys implements ITEmployee {//a class can implement more than 1 interface...
+//	
+//	public void laptop() {
+//		System.out.println("inside laptop of Infosys");
+//	}
+//
+//	public void identityCard() {
+//		System.out.println("inside identityCard of Infosys");		
+//	}
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//		
+//		Infosys infosys = new Infosys();
+//	}
+//}
+
+
+//
+//interface Employee {
+//	
+//	void identityCard();
+//}
+//
+//interface ITEmployee {
+//	
+//	void laptop();
+//}
+//
+//interface MechanicalEmployee {
+//	
+//	void hammer();
+//}
+//
+//class Infosys implements Employee, ITEmployee {//a class can implement more than 1 interface...
+//	
+//	public void laptop() {
+//		System.out.println("inside laptop of Infosys");
+//	}
+//
+//	public void identityCard() {
+//		System.out.println("inside identityCard of Infosys");		
+//	}
+//}
+//
+//class LnT implements Employee, MechanicalEmployee {
+//
+//	public void hammer() {
+//		System.out.println("inside hammer of LnT");
+//	}
+//
+//	public void identityCard() {
+//		System.out.println("inside identityCard of LnT");
+//	}
+//}
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//		
+//		Infosys infosys = new Infosys();
+//	}
+//}
+
+
+//
+//interface Arithmetic {
+//	
+//	int FIRST_ADDRESS= 4;//variables in interfaces are internally public, static and final...
+//				//all the final variable text should be upper case...
+//			
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//		
+//		System.out.println(Arithmetic.FIRST_ADDRESS);	
+//	}
+//}
+
+
+
+//interface Arithmetic {
+//	
+//	int FIRST_ADDRESS= 4;//variables in interfaces are internally public, static and final...
+//				//all the final variable text should be upper case...
+//			
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//		
+//		System.out.println(Arithmetic.FIRST_ADDRESS);	
+//	}
+//}
+
+
+//interface Arithmetic {
+//	
+//	int i = 4;//variables in interfaces are internally public static and final...
+//	
+//	void add();
+//	void sub();	
+//}
+//
+//class ArithmeticImpl implements Arithmetic {
+//
+//	public void add() {
+//		
+//		System.out.println(i);
+//	}
+//
+//	public void sub() {
+//		
+//		System.out.println(i);
+//		i = 6;//this is illegal since I am trying to change the value of interface variable and variables
+//				//of interface are internally final, public and static...
+//	}	
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//		
+//		Arithmetic arithmetic = new ArithmeticImpl();
+//		arithmetic.add();
+//	}
+//}
+
+
+
+//interface Arithmetic {//in this example, neither interface Arithmetic nor abstract class ArithmeticImpl
+//						//will be instantiated or can not create object...
+//	
+//	void add();
+//	void sub();
+//	
+//}
+//
+//abstract class ArithmeticImpl implements Arithmetic {//this class is declared abstract since interface it
+//					// is implementing has 2 abstract methods and this implementation class is implementing
+//					//one of those abstract methods....
+//	
+//	public void add() {
+//		System.out.println("inside add() of ArithmeticImpl");	
+//	}
+//}
+//
+//class ArithmeticImpl2 extends ArithmeticImpl {
+//
+//	public void sub() {
+//		
+//		System.out.println("inside sub() of ArithmeticImpl2");
+//	}	
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//		
+//		Arithmetic arithmetic = new ArithmeticImpl2();
+//		arithmetic.add();    arithmetic.sub();
+//	}
+//}
+
+
+
+//interface Arithmetic {
+//	
+//	void add();
+//	void sub();
+//	
+//}
+//
+//class ArithmeticImpl implements Arithmetic {//interface Arithmetic implementation class ArithmeticImpl
+//									//needs to give implementation to all the methods of interface Arithmetic
+//									//or will have to make ArithmeticImpl class as abstract class which 
+//									//you can see in the above example....
+//	
+//	public void add() {
+//		System.out.println("inside add() of ArithmeticImpl");	
+//	}
+//
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//		
+//		
+//	}
+//}
+
+//interface Arithmetic {
+//	
+//	void add();
+//	void sub();
+//	
+//}
+//
+//class ArithmeticImpl implements Arithmetic {//here ArithmeticImpl is an implementation class of interface
+//											//Arithmetic....
+//
+//	
+//	public void add() {
+//		System.out.println("inside add() of ArithmeticImpl");	
+//	}
+//
+//	
+//	public void sub() {
+//		System.out.println("inside sub() of ArithmeticImpl");	
+//	}
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//		
+//		ArithmeticImpl impl = new ArithmeticImpl();
+//		impl.add();     impl.sub();
+//		
+//		Arithmetic arithmetic = new ArithmeticImpl();//you cannot create object of interface
+//									//however, you can use reference variable of interface type...
+//		arithmetic.add();    arithmetic.sub();
+//	}
+//}
+
+//interface A {//interface is just like a class and interface keyword is used to create one..
+//	
+//	abstract void add();//methods with no -body are internally abstract and you do not need to claim
+//					//or write abstract keyword with unimplemented method/s. But you can write
+//					// abstract keyword with the unimplemented method/s if you want...
+//	void sub();
+//	void multiply();
+//	void divide();
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//		
+//		A a = new A();//this statement is illegal since you can not create object or instantiate of an interface...
+//	}
+//}
+
 ////below is the example of multiple inheritance and is not legal in Java....
 //class A {
 //	
@@ -37,36 +393,36 @@
 
 
 
-abstract class Car {
-	
-	void tires() {
-		System.out.println("inside tyres() of Car");
-	}
-	
-	abstract void engine();//if you have even 1 abstract method then class must be declared abstract
-				//however, if you do not have any abstract method or all methods are implemented then its your choice to make that
-				//class abstract or not...
-	
-}
-
-class ImaginaryPolo extends Car {
-	
-	void abs() {
-		System.out.println("inside abs() of ImaginaryPolo");
-	}
-	void engine() {
-		System.out.println("inside engine() of ImaginaryPolo");
-	}	
-}
-
-
-public class Runner {
-	
-	public static void main(String[] args) {
-	
-		
-	}
-}
+//abstract class Car {
+//	
+//	void tires() {
+//		System.out.println("inside tyres() of Car");
+//	}
+//	
+//	abstract void engine();//if you have even 1 abstract method then class must be declared abstract
+//				//however, if you do not have any abstract method or all methods are implemented then its your choice to make that
+//				//class abstract or not...
+//	
+//}
+//
+//class ImaginaryPolo extends Car {
+//	
+//	void abs() {
+//		System.out.println("inside abs() of ImaginaryPolo");
+//	}
+//	void engine() {
+//		System.out.println("inside engine() of ImaginaryPolo");
+//	}	
+//}
+//
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//	
+//		
+//	}
+//}
 
 
 
