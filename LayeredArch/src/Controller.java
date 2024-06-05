@@ -1,43 +1,56 @@
 import java.util.Scanner;
 
 public class Controller {
-	
+
 	public static void main(String[] args) {
-		
+
 		Scanner sc = new Scanner(System.in);
-		
+
 		boolean flag = true;
-		
+
 		TaskService taskService = new TaskService();
-		
-		while(flag) {
-			
-			System.out.println("Enter input \nEnter 1 for Add Task \nEnter 2 for delete Task \nEnter 0 for Exit");
-			
+		UserService userService = new UserService();
+
+		while (flag) {
+
+			System.out.println(
+					"Enter input \nEnter 1 for Add Task \nEnter 2 for delete Task \nEnter 3 for Registration \nEnter 4 for Login \nEnter 0 for Exit");
+
 			int mainMenuInput = sc.nextInt();
-			
+
 			switch (mainMenuInput) {
-			case 1: 
-				
+			case 1:
+
 				taskService.saveTask();
-				
+
 				break;
-				
+
 			case 2:
-				
+
 				taskService.deleteTask();
-				
+
 				break;
-				
+
+			case 3:
+
+				userService.register();
+
+				break;
+
+			case 4:
+
+				userService.login();
+
+				break;
+
 			case 0:
-				
+
 				flag = false;
 				break;
 			}
 		}
 	}
 }
-
 
 //public class Controller {
 //	
@@ -93,7 +106,6 @@ public class Controller {
 //
 //}
 
-
 //public class Controller {
 //	
 //	public static void main(String[] args) {
@@ -147,4 +159,3 @@ public class Controller {
 //	}
 //
 //}
-
