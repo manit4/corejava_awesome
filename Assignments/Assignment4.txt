@@ -1,0 +1,35 @@
+# Todo Manager Sprint 4
+
+## Problem Statement
+
+Todo Manager is an application, which can manage our Tasks and keep track of our Tasks. In
+the course of 3 week, we will be creating a Todo manager.
+
+## User Stories:-
+
+1. As a user, I should be able to register and login to the application.
+2. As a user, I can be Client or a Visitor.
+3. As a client I should be able to add the task into an array
+4. As a client I should be able to update the task in the array
+5. As a client I should be able to delete the task in the array
+6. As a client I should be able to search a task from an array
+7. As a Visitor, I should be able to see the task assigned to me
+
+## Instructions:-
+
+1. Please refactor the code created in sprint 3.
+2. Please use arrays to store the user objects
+3. All the CRUD operations should happen in a dao class. Main should contain only
+menu
+4. The application can be exited only if user enters 0 to exit. Else, user should see the
+menu repeatedly.
+5. Visitors are not supposed to register themselves.
+6. Only Client will register the visitor
+
+
+
+
+
+Special Instructions:
+Client must be registered first, then he can add task, once tasks are added then he can create accounts for Visitors and the task is assigned
+to the registered visitor, then Client log-out from the system, then visitor logs-in, then he should see the task assigned to the logged-in visitor... 

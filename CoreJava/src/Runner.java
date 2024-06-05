@@ -1,38 +1,394 @@
-class SystemA {
+////below is the example of multiple inheritance and is not legal in Java....
+//class A {
+//	
+//}
+//
+//class B {
+//	
+//}
+//
+//class C extends B, A {
+//	
+//}
+//
+//
+//
+////here is the example of multi-level inheritance
+//class A {
+//	
+//	
+//}
+//
+//class B extends A {
+//	
+//}
+//
+//class C extends B {
+//	
+//	
+//}
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//	
+//		
+//	}
+//}
+
+
+
+abstract class Car {
 	
-	static PrintStreamB out = new PrintStreamB(); 
+	void tires() {
+		System.out.println("inside tyres() of Car");
+	}
+	
+	abstract void engine();//if you have even 1 abstract method then class must be declared abstract
+				//however, if you do not have any abstract method or all methods are implemented then its your choice to make that
+				//class abstract or not...
+	
 }
 
-class PrintStreamB {
+class ImaginaryPolo extends Car {
 	
-	void print() {
-		
-		System.out.println("inside println() of B class");
+	void abs() {
+		System.out.println("inside abs() of ImaginaryPolo");
 	}
-	void print(boolean b) {
-		System.out.println(b);
-	}
-	void print(String s) {
-		
-		System.out.println(s);
-	}
+	void engine() {
+		System.out.println("inside engine() of ImaginaryPolo");
+	}	
 }
+
 
 public class Runner {
 	
 	public static void main(String[] args) {
-		
-//		PrintStreamB b = new PrintStreamB();
-//		b.println();
-		
-		
-		SystemA.out.print();
-		SystemA.out.print(false);
-		SystemA.out.print("abcd");
-		
+	
 		
 	}
 }
+
+
+
+
+//
+//
+//abstract class Car {
+//	
+//	void tires() {
+//		System.out.println("inside tyres() of Car");
+//	}
+//	
+//	abstract void engine();
+//	abstract void musicSystem();
+//}
+//
+//abstract class ImaginaryPolo extends Car {
+//	
+//	void abs() {
+//		System.out.println("inside abs() of ImaginaryPolo");
+//	}
+//	void engine() {
+//		System.out.println("inside engine() of ImaginaryPolo");
+//	}	
+//}
+//
+//class Polo extends ImaginaryPolo {
+//	
+//	void musicSystem() {
+//		System.out.println("inside musicSystem() of Polo");	
+//	}
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//	
+//		Polo polo = new Polo();   
+//		Car car = new Polo();
+//		ImaginaryPolo imaginaryPolo = new Polo();
+//	}
+//}
+
+
+
+
+//
+//abstract class Car {
+//	
+//	void tires() {
+//		System.out.println("inside tyres() of Car");
+//	}
+//	void musicSystem() {
+//		System.out.println("inside musicSystem() of Car");
+//	}
+//	abstract void engine();//engine does not have a body and is used with keyword abstract
+//}
+//
+//class Polo extends Car {
+//	
+//	void abs() {
+//		System.out.println("inside abs() of Polo");
+//	}
+//	void engine() {//here I am implementing the abstract engine() of Car since child class has to 
+//					//implement all the abstract method/s of its parent class. Or if child class can not
+//					//give implementation to all of the parent class abstract method/s of its parent 
+//					//class then child class must be marked abstract which we will see in the above example...
+//					
+//		System.out.println("inside engine() of Polo");
+//	}	
+//}
+//
+//class Benz extends Car {
+//
+//	void engine() {
+//		System.out.println("inside engine() of Benz");
+//	}
+//	void climateControl() {
+//		System.out.println("inside climateControl() of Benz");
+//	}
+//	void tires() {
+//		System.out.println("inside tires() of Benz");
+//	}
+//	
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//		
+//		Polo polo = new Polo();
+//		polo.abs();   polo.musicSystem();    polo.engine();  polo.tires();
+//		
+//		Benz benz = new Benz();
+//		benz.tires();   benz.climateControl();   benz.engine();    benz.musicSystem();
+//	}
+//}
+
+
+
+
+//abstract class Car {
+//	
+//	void tires() {
+//		System.out.println("inside tyres() of Car");
+//	}
+//	void musicSystem() {
+//		System.out.println("inside musicSystem() of Car");
+//	}
+//	abstract void engine();//engine does not have a body and is used with keyword abstract
+//}
+//
+//class Polo extends Car {
+//	
+//	void abs() {
+//		System.out.println("inside abs() of Polo");
+//	}
+//	void engine() {
+//		System.out.println("inside engine() of Polo");
+//	}	
+//}
+//
+//class Benz extends Car {
+//
+//	void engine() {
+//		System.out.println("inside engine() of Benz");
+//	}
+//	void climateControl() {
+//		System.out.println("inside climateControl() of Benz");
+//	}
+//	
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//		
+//		Polo polo = new Polo();
+//		polo.abs();   polo.musicSystem();    polo.engine();  polo.tires();
+//		
+//		Benz benz = new Benz();
+//		benz.tires();   benz.climateControl();   benz.engine();    benz.musicSystem();
+//	}
+//}
+
+
+//abstract class Car {//you can not create object of abstract class and even if you do not have abstract
+				//method in the class but you can create the class abstract ...
+//	
+//	void steeringWheel() {
+//		System.out.println("inside steeringWheel() of Car");
+//	}
+//	void tires() {
+//		System.out.println("inside tyres() of Car");
+//	}
+//	void body() {
+//		System.out.println("inside body of Car");
+//	}
+//}
+//
+//class Polo extends Car {
+//	
+//	void abs() {
+//		System.out.println("inside abs() of Polo");
+//	}
+//	void engine() {
+//		System.out.println("inside engine() of Polo");
+//	}
+//}
+//
+//class Benz extends Car {
+//	
+//	void climateControl() {
+//		System.out.println("inside climateControl() of Benz");
+//	}
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//		
+//		Car car = new Car();//Object of abstract class can not be created, it is illegal
+//		Polo polo = new Polo();
+//		Benz benz = new Benz();
+//		
+//		Car c1 = new Polo();//as we know that we can not create object of abstract class but we can use 
+//							//abstract class as a reference variable which will hold the object of child class...
+//		Car c2 = new Benz();
+//		
+//	}
+//}
+
+
+
+
+//final class Human {//Final class cannot be extended by any class
+//	
+//	void walk() {
+//		
+//	}
+//	void talk() {
+//		
+//	}
+//	void sleep() {
+//		
+//	}
+//}
+//
+//class SuperHuman extends Human {//this is illegal since I am trying to extend the final class. Final
+//		//class can not be extended...
+//	
+//	void fly() {
+//		
+//	}
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//		
+//		SuperHuman human = new SuperHuman();
+//		
+//	}
+//}
+
+
+
+
+//class Car {
+//	
+//	final void steeringWheel() {//final methods can not be overridden...
+//		
+//		System.out.println("inside steeringWheel of Car");
+//	}
+//	void climateControl() {
+//		
+//		System.out.println("inside climateControl() of Car");
+//	}
+//}
+//
+//class Polo extends Car {
+//	
+//	void abs() {
+//		
+//		System.out.println("inside abs() of Polo");
+//	}
+//
+//	void steeringWheel() {//You are trying to override the final method which is illegal
+//
+//		System.out.println("inside steeringWheel of Polo");
+//	}	
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//		
+//		Polo polo = new Polo();    polo.steeringWheel();    polo.climateControl();   polo.abs();   
+//		
+//	}
+//}
+
+
+
+//class A {
+//	
+//	final int i = 4;//final variable is not changeable
+//	final int j;//this is again illegal since you can not leave any final variable uninilialised and you 
+//				//have to assign some value to it...
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//		
+//		A a = new A();
+//		
+//		a.i = 10;//here this is illegal since I am trying to change the final variable value
+//		
+//		System.out.println(a.i);
+//		
+//		
+//	}
+//}
+
+
+
+//class SystemA {
+//	
+//	static PrintStreamB out = new PrintStreamB(); 
+//}
+//
+//class PrintStreamB {
+//	
+//	void print() {
+//		
+//		System.out.println("inside println() of B class");
+//	}
+//	void print(boolean b) {
+//		System.out.println(b);
+//	}
+//	void print(String s) {
+//		
+//		System.out.println(s);
+//	}
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//		
+////		PrintStreamB b = new PrintStreamB();
+////		b.println();
+//		
+//		
+//		SystemA.out.print();
+//		SystemA.out.print(false);
+//		SystemA.out.print("abcd");
+//		
+//		
+//	}
+//}
 
 
 
