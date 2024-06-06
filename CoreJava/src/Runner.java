@@ -1,27 +1,427 @@
+//class A {
+//	
+//	int i = 4;
+//	
+//	A() {
+//		this(10);
+//		System.out.println("inside A class an-arg constr");
+//	}
+//	
+//	A(int i) {
+//		
+//		this.i = i;
+//		System.out.println("A class parameter constr...");
+//	}
+//}
+//
+//class B extends A  {
+//	
+//	int j = 5;
+//	
+//	B() {
+//		System.out.println("B class no-arg constr");
+//	}
+//	
+//	B(int j) {
+//		//this();
+//		this.j = j;
+//		System.out.println("B class Parameter constr");
+//	}
+//	
+//	
+//}
+//
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//
+//		B b = new B(1000);
+//		
+//		System.out.println("The value of i is "+b.i+" and the value of j is "+b.j);
+//		
+//	}
+//}
 
-interface A {//before version Java 8, you can have only abstract methods in an interface but from 
-			//Java 8 onwards , you can have implemented methods also but those methods should be
-		//eiter static method or default method....
-	
-	int FIRST_ADDRESS = 5;
-	
-	void add();
-	
-	static void sub() {
-		System.out.println("inside static sub of interface A");
-	}
-	
-	default void divide() {
-		System.out.println("inside divide default method of interface A");
-	}
-}
+//class A {
+//	
+//	int i = 4;
+//	
+//	A() {
+//		this(10);
+//		System.out.println("inside A class an-arg constr");
+//	}
+//	
+//	A(int i) {
+//		
+//		this.i = i;
+//		System.out.println("A class parameter constr...");
+//	}
+//}
+//
+//class B extends A  {
+//	
+//	int j = 5;
+//	
+//	B() {
+//		System.out.println("B class no-arg constr");
+//	}
+//	
+//	B(int j) {
+//		//this();
+//		this.j = j;
+//		System.out.println("B class Parameter constr");
+//	}
+//	
+//	
+//}
+//
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//
+//		B b = new B(1000);
+//		
+//		System.out.println("The value of i is "+b.i+" and the value of j is "+b.j);
+//		
+//	}
+//}
 
-public class Runner {
-	
-	public static void main(String[] args) {
-			
-	}
-}
+
+
+//
+//class A {
+//	
+//	int i = 4;
+//	
+//	A(int i) {
+//		this.i = i;
+//		System.out.println("A class constr");
+//	}
+//}
+//
+//class B extends A  {
+//	
+//	int j = 5;
+//	
+//	B(int j) {
+//		super(100);
+//		this.j = j;
+//		System.out.println("B class parameter constr");
+//	}
+//}
+//
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//
+//		B b = new B(10);
+//		
+//		System.out.println("The value of i is "+b.i+" and the value of j is "+b.j);
+//		
+//		
+//	}
+//}
+
+
+
+//class A {
+//	
+//	int i = 4;
+//	
+//	A() {
+//		System.out.println("A class constr");
+//	}
+//}
+//
+//class B extends A  {
+//	
+//	int j = 5;
+//	
+//	B(int j) {
+//		super();//this statement is optional and first statement of every constructor is always either "super" or "this" in order for 
+		//other constructor to execute....
+//		this.j = j;
+//		System.out.println("B class parameter constr");
+//	}
+//}
+//
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//
+//		B b = new B(10);
+//		
+//		System.out.println("The value of i is "+b.i+" and the value of j is "+b.j);
+//		
+//		
+//	}
+//}
+
+
+//class A {
+//	
+//	int i = 4;
+//	
+//	A() {
+//		System.out.println("A class constr");
+//	}
+//}
+//
+//class B extends A  {
+//	
+//	int j = 5;
+//	
+//	B() {
+//		super();
+//		System.out.println("B class Constr");
+//	}
+//}
+//
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//
+//		B b = new B();
+//		
+//		System.out.println("The value of i is "+b.i+" and the value of j is "+b.j);
+//		
+//		
+//	}
+//}
+
+
+
+//
+//class Human {
+//	
+//	int iq = 4;
+//	int mascularStrength = 10;
+//	
+//	Human() {
+//		
+//	}
+//	
+//	Human(int iq) {
+//		
+//		this.iq = iq;
+//	}
+//	
+//	Human(int iq, int mascularStrength) {
+//		
+//		this.iq = iq;
+//		this.mascularStrength = mascularStrength;
+//	}
+//	
+//	void study() {
+//		
+//		iq++;
+//	}
+//	void gyming() {
+//		
+//		mascularStrength++;
+//	}
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//
+//		Human manu = new Human(10, 20);
+//		System.out.println(manu.iq);
+//		System.out.println(manu.mascularStrength);
+//		
+//		Human zhen = new Human(20, 50);
+//		System.out.println(zhen.iq);
+//		System.out.println(zhen.mascularStrength);
+//		
+//		Human manit = new Human();
+//		System.out.println(manit.iq);
+//		System.out.println(manit.mascularStrength);
+//		
+//		Human eileen = new Human(25);
+//		System.out.println(eileen.iq);
+//		System.out.println(eileen.mascularStrength);
+//	}
+//}
+
+
+//class Human {
+//	
+//	int iq = 4;
+//	int mascularStrength = 10;
+//	
+//	Human() {
+//		
+//	}
+//	
+//	Human(int iq, int mascularStrength) {
+//		
+//		this.iq = iq;
+//		this.mascularStrength = mascularStrength;
+//	}
+//	
+//	void study() {
+//		
+//		iq++;
+//	}
+//	void gyming() {
+//		
+//		mascularStrength++;
+//	}
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//
+//		Human manu = new Human(10, 20);
+//		System.out.println(manu.iq);
+//		System.out.println(manu.mascularStrength);
+//		
+//		Human zhen = new Human(20, 50);
+//		System.out.println(zhen.iq);
+//		System.out.println(zhen.mascularStrength);
+//		
+//		Human manit = new Human();
+//		System.out.println(manit.iq);
+//		System.out.println(manit.mascularStrength);
+//		
+//	}
+//}
+
+
+
+//class Human {
+//	
+//	int iq = 4;
+//	int mascularStrength = 10;
+//	
+//
+//	Human(int iq, int mascularStrength) {
+//		
+//		this.iq = iq;
+//		this.mascularStrength = mascularStrength;
+//	}
+//	
+//	void study() {
+//		
+//		iq++;
+//	}
+//	void gyming() {
+//		
+//		mascularStrength++;
+//	}
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//
+//		Human manu = new Human(10, 20);
+//		System.out.println(manu.iq);
+//		System.out.println(manu.mascularStrength);
+//		
+//		Human zhen = new Human(20, 50);
+//		System.out.println(zhen.iq);
+//		System.out.println(zhen.mascularStrength);
+//		
+//		Human manit = new Human();//this object creation with no-arg constructor is illegal
+//				//since no-arg constructor is given by default only and only if there is no other
+//				//type of constructor exists as you can see, there is parameterized constructor
+//				//already exists. So if you want to create object with no-arg constructor even if 
+//				//parameterized already exists then you have to create it by yourself which
+//				//you can check in the above example...
+//		
+//		
+//	}
+//}
+
+
+//
+//class Human {
+//	
+//	int iq = 4;
+//	int mascularStrength = 10;
+//	
+//	void study() {
+//		
+//		iq++;
+//	}
+//	void gyming() {
+//		
+//		mascularStrength++;
+//	}
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//
+//		Human manit = new Human();
+//		System.out.println(manit.iq);
+//		System.out.println(manit.mascularStrength);
+//		
+//		Human zhen = new Human();
+//		System.out.println(zhen.iq);
+//		System.out.println(zhen.mascularStrength);
+//		
+//	}
+//}
+
+
+
+//class A {
+//	
+//	int i = 4;
+//	
+//	A() {//This is no-arg constructor which is given by default by the compiler. Constructor
+//			//does not have a return-type
+//		System.out.println("inside constructor...");
+//	}
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//
+//		A a1 = new A();//here I am creating object with the help of no-arg constructor and 
+//					//if you create object with no-arg constructor then the variables in the object
+//					//will have same value as decided by the author of the class..
+//		A a2 = new A();
+//		
+//	}
+//}
+
+
+
+//interface A {//before version Java 8, you can have only abstract methods in an interface but from 
+//			//Java 8 onwards , you can have implemented methods also but those methods should be
+//		//eiter static method or default method....
+//	
+//	int FIRST_ADDRESS = 5;
+//	
+//	void add();
+//	
+//	static void sub() {
+//		System.out.println("inside static sub of interface A");
+//	}
+//	
+//	default void divide() {
+//		System.out.println("inside divide default method of interface A");
+//	}
+//}
+//
+//public class Runner {
+//	
+//	public static void main(String[] args) {
+//			
+//	}
+//}
 
 //interface below studied was limited only till Java 1.7 version...
 
