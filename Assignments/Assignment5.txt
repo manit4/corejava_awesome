@@ -1,0 +1,24 @@
+Coding Challenge Day 5 (Week 1)
+# Todo Manager Sprint 5
+## Problem Statement
+Todo Manager is an application, which can manage our Tasks and keep track of our Tasks. In
+the course of 3 week, we will be creating a Todo manager.
+## User Stories:-
+1. As a user, I should be able to register and login to the application.
+2. As a user, I can be either the client or visitor.
+3. AS a visitor I can only see the tasks assigned to me
+4. As a client I should be able to add the task into an array
+5. As a client I should be able to update the task in the array
+6. As a client I should be able to delete the task in the array
+7. As a client I should be able to search a task from an array
+8. As a client, I should be able to assign the task to a visitor.
+9. As a user (client or visitor) I should be able to arrange my task in any order
+(increasing or descending).
+10. As a visitor I should be able to mark the task as completed
+11. As a visitor, I should be able to see the completed or incomplete tasks
+
+## Instructions:-
+1. Please refactor the code created in sprint 4.
+2. The application can be exited only if user enters 0 to exit. Else, user should see the
+menu repeatedly.
+3. Estimated completion time of the challenge will be 2hr.
