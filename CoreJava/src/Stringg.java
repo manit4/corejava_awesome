@@ -16,10 +16,7 @@ public class Stringg {
 		
 		str1.concat(str2);
 		
-		System.out.println(str1);
-		
-		
-		
+		System.out.println(str1);	
 	}
 }
 
