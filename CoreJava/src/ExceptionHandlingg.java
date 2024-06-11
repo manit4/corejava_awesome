@@ -1,5 +1,103 @@
 import java.util.Scanner;
 
+public class ExceptionHandlingg {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter the Divider!!");
+		int divider = sc.nextInt();
+
+		try {
+			
+			int value = 10/divider;
+			System.out.println("The value after division is "+value);		
+		} 
+		finally {
+			System.out.println("inside finally");
+		}	
+		
+		System.out.println("after finally");
+	}
+}
+
+
+
+//public class ExceptionHandlingg {
+//
+//	public static void main(String[] args) {
+//		
+//		Scanner sc = new Scanner(System.in);
+//
+//		try {
+//
+//			System.out.println("Enter the Divider!!");
+//			int divider = sc.nextInt();
+//			
+//			int value = 10/divider;
+//			System.out.println("The value after division is "+value);
+//				
+//		} 
+//		finally {//try without catch but with finally is legal...
+//			
+//			System.out.println("inside finally");
+//			sc.close();
+//		}
+//		
+//	}
+//}
+
+
+//public class ExceptionHandlingg {
+//
+//	public static void main(String[] args) {
+//		
+//		Scanner sc = new Scanner(System.in);
+//
+//		try {
+//
+//			System.out.println("Enter the Divider!!");
+//			int divider = sc.nextInt();
+//			
+//			int value = 10/divider;
+//			System.out.println("The value after division is "+value);
+//				
+//		} //just having try without either catch or finally is illegal. But you can have both finally and catch
+//						//with try...
+//		
+//	}
+//}
+
+
+
+//public class ExceptionHandlingg {
+//
+//	public static void main(String[] args) {
+//		
+//		Scanner sc = new Scanner(System.in);
+//
+//		try {
+//
+//			System.out.println("Enter the Divider!!");
+//			int divider = sc.nextInt();
+//			
+//			int value = 10/divider;
+//			System.out.println("The value after division is "+value);
+//				
+//		} 
+//		catch(Exception e) {
+//			System.out.println("inside catch");
+//		}
+//		finally {//This finally block with always run whether you have exception raised in the try or not...
+//			System.out.println("inside finally...");
+//			sc.close();
+//		}
+//		
+//	}
+//}
+
+
 //public class ExceptionHandlingg {
 //
 //	public static void main(String[] args) {
@@ -383,29 +481,29 @@ import java.util.Scanner;
 //	}
 //}
 
-public class ExceptionHandlingg {
-	
-	public static void main(String[] args) {
-		
-		try {
-		
-			Scanner sc = new Scanner(System.in);
-			
-			System.out.println("Enter the Divider!!");
-			int divider = sc.nextInt();
-			
-			int value = 10/divider;
-			System.out.println("The value after divide is "+value);
-		}
-		catch (Exception e) {
-			
-			System.out.println("inside catch block");
-			e.printStackTrace();
-			System.out.println("Kinldy do not give 0 as divider!!!");
-			main(null);
-		}
-	}
-}
+//public class ExceptionHandlingg {
+//	
+//	public static void main(String[] args) {
+//		
+//		try {
+//		
+//			Scanner sc = new Scanner(System.in);
+//			
+//			System.out.println("Enter the Divider!!");
+//			int divider = sc.nextInt();
+//			
+//			int value = 10/divider;
+//			System.out.println("The value after divide is "+value);
+//		}
+//		catch (Exception e) {
+//			
+//			System.out.println("inside catch block");
+//			e.printStackTrace();
+//			System.out.println("Kinldy do not give 0 as divider!!!");
+//			main(null);
+//		}
+//	}
+//}
 
 //public class ExceptionHandlingg {
 //	
