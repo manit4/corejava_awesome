@@ -4,34 +4,239 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class ExceptionHandlingg {
+//class EvenNumberPassedException extends Exception {
+//	
+//	public EvenNumberPassedException(String message) {
+//		
+//		super(message);
+//	}
+//}
+//
+//
+//public class ExceptionHandlingg {
+//
+//	public static void main(String[] args) throws EvenNumberPassedException {
+//		
+//				int returnedValue = returnInt(12);
+//
+//				System.out.println();
+//			
+//	}
+//
+//	public static int returnInt(int value) throws EvenNumberPassedException {
+//		
+//		if( value % 2 == 0 ) {
+//			throw new EvenNumberPassedException("You passed Even Number as Argument...");
+//		}
+//		
+//		return value * 10;
+//	}	
+//}
 
-	public static void main(String[] args) throws Exception {
 
-		b();
-		System.out.println("inside main()");
 
-	}
+//class EvenNumberPassedException extends Exception {
+//	
+//	public EvenNumberPassedException(String message) {
+//		
+//		super(message);
+//	}
+//}
+//
+//
+//public class ExceptionHandlingg {
+//
+//	public static void main(String[] args) {
+//		
+//			try {
+//				int returnedValue = returnInt(12);
+//
+//				System.out.println();
+//			}
+//			catch (Exception e) {
+//				System.out.println("inside catch...");
+//			}
+//	}
+//
+//	public static int returnInt(int value) throws EvenNumberPassedException {
+//		
+//		if( value % 2 == 0 ) {
+//			throw new EvenNumberPassedException("You passed Even Number as Argument...");
+//		}
+//		
+//		return value * 10;
+//	}	
+//}
 
-	public static void b() throws Exception {
 
-		c();
-		System.out.println("inside b()");
-	}
 
-	public static void c() throws Exception {
+//class EvenNumberPassedException extends RuntimeException {
+//		
+//	public EvenNumberPassedException(String message) {
+//		
+//		super(message);
+//	}
+//}
+//
+//
+//public class ExceptionHandlingg {
+//
+//	public static void main(String[] args) {
+//		
+//			int returnedValue = returnInt(12);
+//
+//			System.out.println();
+//	}
+//
+//	public static int returnInt(int value) {
+//		
+//		if( value % 2 == 0 ) {
+//			throw new EvenNumberPassedException("You passed Even Number as Argument...");
+//		}
+//		
+//		return value * 10;
+//	}	
+//}
 
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter the File Name!!");
+//class EvenNumberPassedException extends RuntimeException {
+//	
+//	
+//}
+//
+//
+//public class ExceptionHandlingg {//This program belong to Exception Handling...
+//
+//	public static void main(String[] args) {
+//		
+//			int returnedValue = returnInt(12);
+//
+//			System.out.println();
+//	}
+//
+//	public static int returnInt(int value) {
+//		
+//		if( value % 2 == 0 ) {
+//			throw new EvenNumberPassedException();
+//		}
+//		
+//		return value * 10;
+//	}	
+//}
 
-		String fileName = sc.next();
 
-		File file = new File("C:\\Users\\Manit Hira\\OneDrive\\Documents\\AwesomeJavaBatch\\" + fileName);
-		FileReader reader = new FileReader(file);
-		System.out.println((char) reader.read());
 
-	}
-}
+//public class ExceptionHandlingg {//This program belong to Exception Handling...
+//
+//	public static void main(String[] args) {
+//		
+//		try {
+//			int returnedValue = returnInt(12);
+//
+//			System.out.println();
+//		}
+//		catch (Exception e) {
+//			System.out.println("inside catch....");
+//			e.printStackTrace();
+//		}
+//	}
+//
+//	public static int returnInt(int value) throws IOException {
+//		
+//		if( value % 2 == 0 ) {
+//			
+//			throw new IOException();//This is throwing CheckedException that is why this method must
+//							//say "throws" in method signature. But in the last example, method was throwing
+//							//ArithmeticException and ArithmeticException is Unchecked Exception that is why
+//							//method signature should not say "throws"...
+//		}
+//		
+//		return value * 10;
+//	}	
+//}
+
+
+//public class ExceptionHandlingg {//This program belong to Exception Handling...
+//
+//	public static void main(String[] args) {
+//		
+//		
+//			int returnedValue = returnInt(12);
+//
+//			System.out.println();
+//		
+
+//	}
+//
+//	public static int returnInt(int value) {
+//		
+//		if( value % 2 == 0 ) {
+//			
+//			throw new ArithmeticException();
+//		}
+//		
+//		return value * 10;
+//	}	
+//}
+
+
+//public class ExceptionHandlingg {//This program belong to Exception Handling...
+//
+//	public static void main(String[] args) throws Exception {
+//
+//		b();
+//		System.out.println("inside main()");
+//
+//	}
+//
+//	public static void b() throws Exception {
+//
+//		c();
+//		System.out.println("inside b()");
+//	}
+//
+//	public static void c() throws Exception {
+//
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("Enter the File Name!!");
+//
+//		String fileName = sc.next();
+//
+//		File file = new File("C:\\Users\\Manit Hira\\OneDrive\\Documents\\AwesomeJavaBatch\\" + fileName);
+//		FileReader reader = new FileReader(file);
+//		System.out.println((char) reader.read());
+//
+//	}
+//}
+
+
+//public class ExceptionHandlingg {//This program belong to Exception Handling...
+//
+//	public static void main(String[] args) throws Exception {
+//
+//		b();
+//		System.out.println("inside main()");
+//
+//	}
+//
+//	public static void b() throws Exception {
+//
+//		c();
+//		System.out.println("inside b()");
+//	}
+//
+//	public static void c() throws Exception {
+//
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("Enter the File Name!!");
+//
+//		String fileName = sc.next();
+//
+//		File file = new File("C:\\Users\\Manit Hira\\OneDrive\\Documents\\AwesomeJavaBatch\\" + fileName);
+//		FileReader reader = new FileReader(file);
+//		System.out.println((char) reader.read());
+//
+//	}
+//}
 
 //public class ExceptionHandlingg {
 //
