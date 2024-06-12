@@ -1,28 +1,285 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class ExceptionHandlingg {
 
-	public static void main(String[] args) {
-		
-		Scanner sc = new Scanner(System.in);
-		
-		System.out.println("Enter the Divider!!");
-		int divider = sc.nextInt();
+	public static void main(String[] args) throws Exception {
 
-		try {
-			
-			int value = 10/divider;
-			System.out.println("The value after division is "+value);		
-		} 
-		finally {
-			System.out.println("inside finally");
-		}	
-		
-		System.out.println("after finally");
+		b();
+		System.out.println("inside main()");
+
+	}
+
+	public static void b() throws Exception {
+
+		c();
+		System.out.println("inside b()");
+	}
+
+	public static void c() throws Exception {
+
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the File Name!!");
+
+		String fileName = sc.next();
+
+		File file = new File("C:\\Users\\Manit Hira\\OneDrive\\Documents\\AwesomeJavaBatch\\" + fileName);
+		FileReader reader = new FileReader(file);
+		System.out.println((char) reader.read());
+
 	}
 }
 
+//public class ExceptionHandlingg {
+//
+//	public static void main(String[] args) {
+//
+//		try {
+//			b();
+//			System.out.println("inside main()");
+//		}
+//		catch (Exception e) {
+//			System.out.println("inside catch of main()");
+//		}
+//	}
+//
+//	public static void b() throws Exception {
+//
+//		
+//			c();
+//			System.out.println("inside b()");
+//	}
+//
+//	public static void c() throws Exception {
+//		
+//			Scanner sc = new Scanner(System.in);
+//			System.out.println("Enter the File Name!!");
+//
+//			String fileName = sc.next();
+//
+//			File file = new File("C:\\Users\\Manit Hira\\OneDrive\\Documents\\AwesomeJavaBatch\\" + fileName);
+//			FileReader reader = new FileReader(file);
+//			System.out.println((char) reader.read());
+//		
+//	}
+//}
 
+//public class ExceptionHandlingg {
+//
+//	public static void main(String[] args) {
+//
+//		b();
+//		System.out.println("inside main()");
+//	}
+//
+//	public static void b() {
+//
+//		try {
+//			c();
+//			System.out.println("inside b()");
+//		}
+//		catch (Exception e) {
+//			System.out.println("inside catch of b()");
+//		}
+//	}
+//
+//	public static void c() throws Exception {
+//		
+//			Scanner sc = new Scanner(System.in);
+//			System.out.println("Enter the File Name!!");
+//
+//			String fileName = sc.next();
+//
+//			File file = new File("C:\\Users\\Manit Hira\\OneDrive\\Documents\\AwesomeJavaBatch\\" + fileName);
+//			FileReader reader = new FileReader(file);
+//			System.out.println((char) reader.read());
+//		
+//	}
+//}
+
+//public class ExceptionHandlingg {
+//
+//	public static void main(String[] args) {
+//
+//		b();
+//		System.out.println("inside main()");
+//	}
+//
+//	public static void b() {
+//
+//		c();
+//		System.out.println("inside b()");
+//	}
+//
+//	public static void c() {
+//		
+//		try {
+//			Scanner sc = new Scanner(System.in);
+//			System.out.println("Enter the File Name!!");
+//
+//			String fileName = sc.next();
+//
+//			File file = new File("C:\\Users\\Manit Hira\\OneDrive\\Documents\\AwesomeJavaBatch\\" + fileName);
+//			FileReader reader = new FileReader(file);
+//			System.out.println((char) reader.read());
+//		}
+//		catch (Exception e) {
+//			System.out.println("inside catch of c()");
+//		}
+//	}
+//}
+
+//public class ExceptionHandlingg {
+//
+//	public static void main(String[] args) throws IOException {
+//
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("Enter the File Name!!");
+//
+//		String fileName = sc.next();
+//
+//		File file = new File("C:\\Users\\Manit Hira\\OneDrive\\Documents\\AwesomeJavaBatch\\" + fileName);
+//		FileReader reader = new FileReader(file);
+//		System.out.println((char) reader.read());
+//
+//	}
+//}
+
+//public class ExceptionHandlingg {
+//
+//	public static void main(String[] args) throws IOException {
+//
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("Enter the File Name!!");
+//
+//		String fileName = sc.next();
+//
+//		File file = new File("C:\\Users\\Manit Hira\\OneDrive\\Documents\\AwesomeJavaBatch\\" + fileName);
+//		FileReader reader = new FileReader(file);
+//		System.out.println((char) reader.read());
+//
+//	}
+//}
+
+//public class ExceptionHandlingg {
+//
+//	public static void main(String[] args) {
+//		
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("Enter the File Name!!");
+//		
+//		String fileName = sc.next();
+//		
+//		try {
+//			File file = new File("C:\\Users\\Manit Hira\\OneDrive\\Documents\\AwesomeJavaBatch\\"+fileName);
+//			FileReader reader = new FileReader(file);
+//			System.out.println((char)reader.read());
+//		}
+//		catch (Exception e) {
+//			System.out.println("inside catch");
+//			e.printStackTrace();
+//			System.out.println("Enter the Correct File Name!!");
+//			main(null);
+//		}
+//	}
+//}
+
+//public class ExceptionHandlingg {
+//
+//	public static void main(String[] args) {
+//		
+////		int value = 553363;
+////		String str = ""+value;
+////		
+////		System.out.println(str.length());
+//		
+//		String str = "565655e";
+//		int value = 34143;
+//		int parsedInt = Integer.parseInt(str);//This throws an exception since the string passed to parseInt()
+//							//can not be converted into int...
+//		
+//		System.out.println(parsedInt+value);
+//	}
+//}
+
+//import com.awesome.dao.UserDAO;
+//import com.awesome.pojo.User;
+//
+//
+//public class ExceptionHandlingg {
+//
+//	public static void main(String[] args) {
+//		
+//		UserDAO userDAO = new UserDAO();
+//		
+//		User user = userDAO.findUser("102");
+//		
+//		if(user != null) {//null check
+//			System.out.println(user.getName());
+//		}
+//		else {
+//			System.out.println("User not Found...");
+//		}
+//	}
+//}
+
+//class Ab {
+//
+//	int i = 4;
+//
+//	void display() {
+//
+//		System.out.println("The value of i is " + i);
+//	}
+//}
+//
+//public class ExceptionHandlingg {
+//
+//	public static void main(String[] args) {
+//
+////		Ab a1 = new Ab();
+////		
+////		System.out.println(a1.i);
+////		
+////		a1.display();
+//
+//		Ab a1 = null;//you can assign reference variable to null but can not assign null to primitive 
+//					//data type variable such as int, boolean, double...
+//
+//		System.out.println(a1.i);//this will lead to NullPointerException because I am trying to call
+//							//variable on reference variable pointing to null or assigned to null...
+//
+//		a1.display();//this will lead to NullPointerException because I am trying to call
+//		//method on reference variable pointing to null or assigned to null...
+//	}
+//}
+
+//import java.util.Scanner;
+//
+//public class ExceptionHandlingg {
+//
+//	public static void main(String[] args) {
+//		
+//		Scanner sc = new Scanner(System.in);
+//		
+//		System.out.println("Enter the Divider!!");
+//		int divider = sc.nextInt();
+//
+//		try {
+//			
+//			int value = 10/divider;
+//			System.out.println("The value after division is "+value);		
+//		} 
+//		finally {
+//			System.out.println("inside finally");
+//		}	
+//		
+//		System.out.println("after finally");
+//	}
+//}
 
 //public class ExceptionHandlingg {
 //
@@ -48,7 +305,6 @@ public class ExceptionHandlingg {
 //	}
 //}
 
-
 //public class ExceptionHandlingg {
 //
 //	public static void main(String[] args) {
@@ -68,8 +324,6 @@ public class ExceptionHandlingg {
 //		
 //	}
 //}
-
-
 
 //public class ExceptionHandlingg {
 //
@@ -97,7 +351,6 @@ public class ExceptionHandlingg {
 //	}
 //}
 
-
 //public class ExceptionHandlingg {
 //
 //	public static void main(String[] args) {
@@ -121,7 +374,6 @@ public class ExceptionHandlingg {
 //		
 //	}
 //}
-
 
 //public class ExceptionHandlingg {
 //
@@ -148,8 +400,6 @@ public class ExceptionHandlingg {
 //		}
 //	}
 //}
-
-
 
 //public class ExceptionHandlingg {
 //
@@ -192,9 +442,6 @@ public class ExceptionHandlingg {
 //	}
 //}
 
-
-
-
 //public class ExceptionHandlingg {
 //
 //	public static void main(String[] args) {
@@ -229,8 +476,6 @@ public class ExceptionHandlingg {
 //		}
 //	}
 //}
-
-
 
 //public class ExceptionHandlingg {
 //
@@ -276,7 +521,6 @@ public class ExceptionHandlingg {
 //	}
 //}
 
-
 //public class ExceptionHandlingg {
 //
 //	public static void main(String[] args) {
@@ -310,7 +554,6 @@ public class ExceptionHandlingg {
 //	}
 //}
 
-
 //public class ExceptionHandlingg {
 //
 //	public static void main(String[] args) {
@@ -355,7 +598,6 @@ public class ExceptionHandlingg {
 //	}
 //}
 
-
 //public class ExceptionHandlingg {
 //
 //	public static void main(String[] args) {
@@ -399,8 +641,6 @@ public class ExceptionHandlingg {
 //		}
 //	}
 //}
-
-
 
 //public class ExceptionHandlingg {
 //
