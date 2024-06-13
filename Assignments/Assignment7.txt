@@ -1,0 +1,14 @@
+# Todo Manager Sprint 6
+
+## Problem Statement
+
+Todo Manager is an application, which can manage our Tasks and keep track of our Tasks. In
+the course of 3 week, we will be creating a Todo manager.
+
+1. Add custom exceptions to check the negative condition.
+2. Please use custom exceptions for visitor and clients.
+
+## Instructions: -
+
+1. Please refactor sprint 5
+2. Estimated completion time of the challenge will be 2hr
