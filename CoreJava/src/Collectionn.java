@@ -1,34 +1,118 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
+
+class Ab {
+	
+	int i = 4;
+	int j = 5;
+	
+	@Override
+	public int hashCode() {
+		System.out.println("inside hashCode overriding()");
+		return 7;
+	}
+	
+	public boolean equals(Object obj) {
+		System.out.println("inside equals()");
+		Ab ab = (Ab)obj;
+		boolean status = false;
+		
+		if( this.i == ab.i) {
+			status = true;
+		}
+		return status;
+	}
+}
 
 public class Collectionn {
 
 	public static void main(String[] args) {
 
-		List<String> list = new ArrayList<>();
-
-		list.add("Steven");
-		list.add("Shuai");
-		list.add("Eileen");
-
-		for (String value : list) {
-
-			System.out.println(value);
+		Ab a1 = new Ab();   Ab a2 = new Ab();    Ab a3 = new Ab();    a2.i = 100;
+		
+		Set<Ab> set = new HashSet<>();
+		
+		set.add(a1);    set.add(a2);    set.add(a3);
+		
+		for(Ab value : set) {
+			
+			System.out.println(value.i+", "+value.j);
 		}
-
-		System.out.println("After sort");
-
-		Collections.sort(list);//Collection is a framework in which Collection is an interface and 
-						//Collections is a utility class in which we have utility method like sort()...
-
-		for (String value : list) {
-
-			System.out.println(value);
-		}
+		
 
 	}
 }
+
+
+
+//class Ab {
+//	
+//	int i = 4;
+//	int j = 5;
+//	
+//	@Override
+//	public boolean equals(Object obj) {
+//		System.out.println("inside equals()");
+//		Ab o = (Ab)obj;
+//		
+//		boolean status = false;
+//		
+//		if(this.i == o.i) {
+//			status = true;
+//		}
+//		return status;
+//	}
+//}
+//
+//public class Collectionn {
+//
+//	public static void main(String[] args) {
+//
+//		Set<Ab> set = new HashSet<>();
+//
+//		Ab a1 = new Ab();   Ab a2 = new Ab();    Ab a3 = new Ab();
+//		
+//		set.add(a1);   set.add(a2);  set.add(a3);
+//		
+//		
+//		for( Ab value : set ) {
+//			
+//			System.out.println(value.i+", "+value.j);
+//		}
+//		
+//		
+//
+//	}
+//}
+
+
+//public class Collectionn {
+//
+//	public static void main(String[] args) {
+//
+//		List<String> list = new ArrayList<>();
+//
+//		list.add("Steven");
+//		list.add("Shuai");
+//		list.add("Eileen");
+//
+//		for (String value : list) {
+//
+//			System.out.println(value);
+//		}
+//
+//		System.out.println("After sort");
+//
+//		Collections.sort(list);//Collection is a framework in which Collection is an interface and 
+//						//Collections is a utility class in which we have utility method like sort()...
+//
+//		for (String value : list) {
+//
+//			System.out.println(value);
+//		}
+//
+//	}
+//}
 
 //class Iphone implements Comparable<Iphone>{
 //	
