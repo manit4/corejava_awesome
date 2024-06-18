@@ -1,47 +1,222 @@
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
-class Ab {
-	
-	int i = 4;
-	int j = 5;
-	
-	@Override
-	public int hashCode() {
-		System.out.println("inside hashCode overriding()");
-		return 7;
-	}
-	
-	public boolean equals(Object obj) {
-		System.out.println("inside equals()");
-		Ab ab = (Ab)obj;
-		boolean status = false;
-		
-		if( this.i == ab.i) {
-			status = true;
-		}
-		return status;
-	}
-}
 
-public class Collectionn {
+public class Collectionn {//Any Map implementation classes say that my key would be unique but not values... 
 
 	public static void main(String[] args) {
+		
+		Map<Integer, String> map = new HashMap<>();
+		
+		map.put(100, "Celia");
+		map.put(101, "Eileen");
+		map.put(102, "Laurene");
+		
+		map.put(105, "Zhen");
+		
+		Set<Integer> keys = map.keySet();
 
-		Ab a1 = new Ab();   Ab a2 = new Ab();    Ab a3 = new Ab();    a2.i = 100;
+//		for( int key : keys ) {
+//			
+//			System.out.println("The key is "+key+" and the value is "+map.get(key));
+//		}
 		
-		Set<Ab> set = new HashSet<>();
+		Iterator<Integer> it = keys.iterator();
 		
-		set.add(a1);    set.add(a2);    set.add(a3);
+//		while( it.hasNext() ) {
+//			
+//			System.out.println(map.get(it.next()));
+//		}
 		
-		for(Ab value : set) {
-			
-			System.out.println(value.i+", "+value.j);
+		for( Entry<Integer, String> entry : map.entrySet()) {
+			System.out.println(entry.getKey()+", "+entry.getValue());
 		}
 		
-
+		
+		
+		
+		
 	}
 }
+
+
+
+//public class Collectionn {//Any Map implementation classes say that my key would be unique but not values... 
+//
+//	public static void main(String[] args) {
+//		
+//		Map<Integer, String> map = new HashMap<>();
+//		
+//		map.put(100, "Celia");//If we add something to Map implementation classess, then we say we have
+//						//added Entry to the Map. But in Set or List, we say, we have added the element...
+//		map.put(101, "Eileen");
+//		map.put(102, "Laurene");
+//		
+//		map.put(101, "Zhen");//Since key 101 is already inserted with value "Eileen" and this same
+//		//statement will replace the Value "Eileen" with "Zhen" since the key is being repeated...
+//		
+//		map.put(null, "Jing");//you can have "null" just once as a key in HashMap only and can have multiple
+//						//null values
+//		map.put(null, "Steven");//This statement will replace the value of key as null since this null
+//					//key was already inserted with value "Jing"...
+//		
+//		//System.out.println(map.size());
+//		
+//		System.out.println(map.get(100));
+//		System.out.println(map.get(101));
+//		System.out.println(map.get(102));
+//		System.out.println(map.get(null));
+//
+//	}
+//}
+
+
+//class Course {
+//	
+//	int courseId;
+//	int cost;
+//	
+//	@Override
+//	public int hashCode() {
+//		
+//		return 10;
+//	}
+//	
+//	@Override
+//	public boolean equals(Object object) {
+//		
+//		boolean status = false;
+//		Course course = (Course)object;
+//		
+//		if(this.courseId == course.courseId) {
+//			
+//			status = true;
+//		}
+//		return status;
+//	}
+//}
+//
+//public class Collectionn {
+//
+//	public static void main(String[] args) {
+//		
+//		Set<Course> courses = new HashSet<>();
+//		
+//		Course c1 = new Course();   c1.courseId = 100;   c1.cost = 1000;
+//		Course c2 = new Course();   c2.courseId = 101;   c2.cost = 800;
+//		Course c3 = new Course();   c3.courseId = 102;   c3.cost = 1000;
+//		Course c4 = new Course();   c4.courseId = 101;   c4.cost = 900;
+//		
+//		courses.add(c1);    courses.add(c2);  courses.add(c3);     courses.add(c4);
+//		
+//		for( Course course : courses ) {
+//			
+//			System.out.println(course.courseId+", "+course.cost);
+//		}
+//
+//	}
+//}
+
+
+
+
+//class Ab {
+//	
+//	int i = 4;
+//	int j = 5;
+//	
+//	@Override
+//	public int hashCode() {
+//		System.out.println("inside hashCode()");
+//		return 70;
+//	}
+//	
+//	
+//	@Override
+//	public boolean equals(Object obj) {
+//		System.out.println("inside equals()...");
+//		Ab ab = (Ab)obj;
+//		
+//		boolean status = false;
+//		
+//		if(this.i == ab.i && this.j == ab.j) {
+//			status = true;
+//		}
+//		return status;
+//	}
+//	
+//}
+//
+//public class Collectionn {
+//
+//	public static void main(String[] args) {
+//		
+//		Set<Ab> set = new HashSet<>();
+//		
+//		Ab a1 = new Ab();
+//		Ab a2 = new Ab();
+//		Ab a3 = new Ab();
+//		
+//		a2.j = 100;
+//		
+//		set.add(a1);  set.add(a2);  set.add(a3);
+//		
+//		for(Ab obj : set) {
+//			
+//			System.out.println(obj.i+", "+obj.j);
+//		}
+//
+//	}
+//}
+
+
+
+//class Ab {
+//	
+//	int i = 4;
+//	int j = 5;
+//	
+//	@Override
+//	public int hashCode() {
+//		System.out.println("inside hashCode overriding()");
+//		return 7;
+//	}
+//	
+//	public boolean equals(Object obj) {
+//		System.out.println("inside equals()");
+//		Ab ab = (Ab)obj;
+//		boolean status = false;
+//		
+//		if( this.i == ab.i) {
+//			status = true;
+//		}
+//		return status;
+//	}
+//}
+//
+//public class Collectionn {
+//
+//	public static void main(String[] args) {
+//
+//		Ab a1 = new Ab();   Ab a2 = new Ab();    Ab a3 = new Ab();    a2.i = 100;
+//		
+//		Set<Ab> set = new HashSet<>();
+//		
+//		set.add(a1);    set.add(a2);    set.add(a3);
+//		
+//		for(Ab value : set) {
+//			
+//			System.out.println(value.i+", "+value.j);
+//		}
+//		
+//
+//	}
+//}
 
 
 
