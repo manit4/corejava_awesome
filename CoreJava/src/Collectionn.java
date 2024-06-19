@@ -1,50 +1,184 @@
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
-import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
+import java.util.TreeMap;
 
+class Ab implements Comparable<Ab>{
 
-public class Collectionn {//Any Map implementation classes say that my key would be unique but not values... 
+	int i = 4;
 
-	public static void main(String[] args) {
+	@Override
+	public int compareTo(Ab o) {
 		
-		Map<Integer, String> map = new HashMap<>();
+		int status = 0;
 		
-		map.put(100, "Celia");
-		map.put(101, "Eileen");
-		map.put(102, "Laurene");
-		
-		map.put(105, "Zhen");
-		
-		Set<Integer> keys = map.keySet();
-
-//		for( int key : keys ) {
-//			
-//			System.out.println("The key is "+key+" and the value is "+map.get(key));
-//		}
-		
-		Iterator<Integer> it = keys.iterator();
-		
-//		while( it.hasNext() ) {
-//			
-//			System.out.println(map.get(it.next()));
-//		}
-		
-		for( Entry<Integer, String> entry : map.entrySet()) {
-			System.out.println(entry.getKey()+", "+entry.getValue());
+		if(this.i < o.i) {
+			status = -1;
+		}
+		else if(this.i > o.i) {
+			status = 1;
 		}
 		
-		
-		
-		
-		
+		return status;
 	}
 }
 
+public class Collectionn {
 
+	public static void main(String[] args) {
+
+		Map<Ab, String> map = new TreeMap<>();
+
+		Ab a1 = new Ab();
+		Ab a2 = new Ab();   a2.i = 1;
+		Ab a3 = new Ab();   a3.i = 3;
+
+		map.put(a2, "Laurene");
+		map.put(a1, "Celia");
+		map.put(a3, "Manit");
+
+		System.out.println(map.size());
+
+	}
+}
+
+//public class Collectionn {
+//
+//	public static void main(String[] args) {
+//		
+//		
+//		Map<Integer, String> map = new TreeMap<>();//TreeMap is sorted with keys...
+//		
+//		map.put(100, "Laurene");
+//		map.put(106, "Celia");
+//		map.put(105, "Zhen");
+//		map.put(1000, "Manit");
+//		map.put(103, "Steven");
+//		
+//		for( Entry<Integer, String> entry : map.entrySet()) {
+//			System.out.println(entry.getKey()+", "+entry.getValue());
+//		}
+//	}
+//}
+
+//class Ab {
+//	
+//	int i = 4;
+//	
+//	public int hashCode() {
+//		
+//		System.out.println("inside hashCode()");
+//		
+//		return 10;
+//	}
+//}
+//
+//public class Collectionn {//Any Map implementation classes say that my key would be unique but not values... 
+//
+//	public static void main(String[] args) {
+//		
+//		Map<Ab, String> map = new HashMap<>();
+//		
+//		Ab a1 = new Ab();
+//		Ab a2 = new Ab();
+//		Ab a3 = new Ab();
+//		
+//		map.put(a2, "Laurene");
+//		map.put(a1, "Celia");
+//		map.put(a3, "Manit");
+//		map.put(null, "Shuai");
+//		
+//		System.out.println(map.size());
+//		
+//		for( Entry<Ab, String> entry : map.entrySet()) {
+//			
+//			if(entry.getKey() != null) {
+//				System.out.println(entry.getKey().i+", "+entry.getValue());
+//			}
+//			else {
+//				System.out.println("Key is Null and the value is "+entry.getValue());
+//			}	
+//		}
+//	}
+//}
+
+//public class Collectionn {
+//
+//	public static void main(String[] args) {
+//		
+//		
+//		Map<Integer, String> map = new HashMap<>();//Hashtable is neither sorted nor ordered, it does not 
+//									//take anything(neither key nor value) which is null...
+//		
+//		map.put(100, "Laurene");
+//		map.put(106, "Celia");
+//		map.put(105, "Zhen");
+//		map.put(1000, "Manit");
+//		map.put(103, "Steven");
+//		map.put(101, "Eileen");
+//		map.put(null, "Shuai");
+//		
+//		for( Entry<Integer, String> entry : map.entrySet()) {
+//			System.out.println(entry.getKey()+", "+entry.getValue());
+//		}
+//	}
+//}
+
+//public class Collectionn {//Any Map implementation classes say that my key would be unique but not values... 
+//
+//	public static void main(String[] args) {
+//		
+//		Map<Integer, String> map = new HashMap<>();//HashMap is neither sorted nor ordered and is done on the basis of 
+//											//keys and if you have null as key that will be moved on top...
+//		
+//		map.put(100, "Laurene");
+//		map.put(102, "Celia");
+//		map.put(105, "Zhen");
+//		map.put(103, "Steven");
+//		map.put(101, "Eileen");
+//		map.put(null, "Shuai");
+//		
+//		for( Entry<Integer, String> entry : map.entrySet()) {
+//			System.out.println(entry.getKey()+", "+entry.getValue());
+//		}
+//	}
+//}
+
+//public class Collectionn {//Any Map implementation classes say that my key would be unique but not values... 
+//
+//	public static void main(String[] args) {
+//		
+//		Map<Integer, String> map = new HashMap<>();
+//		
+//		map.put(100, "Celia");
+//		map.put(101, "Eileen");
+//		map.put(102, "Laurene");
+//		
+//		map.put(105, "Zhen");
+//		
+//		Set<Integer> keys = map.keySet();
+//
+////		for( int key : keys ) {
+////			
+////			System.out.println("The key is "+key+" and the value is "+map.get(key));
+////		}
+//		
+//		Iterator<Integer> it = keys.iterator();
+//		
+////		while( it.hasNext() ) {
+////			
+////			System.out.println(map.get(it.next()));
+////		}
+//		
+//		for( Entry<Integer, String> entry : map.entrySet()) {
+//			System.out.println(entry.getKey()+", "+entry.getValue());
+//		}
+//		
+//		
+//		
+//		
+//		
+//	}
+//}
 
 //public class Collectionn {//Any Map implementation classes say that my key would be unique but not values... 
 //
@@ -74,7 +208,6 @@ public class Collectionn {//Any Map implementation classes say that my key would
 //
 //	}
 //}
-
 
 //class Course {
 //	
@@ -121,9 +254,6 @@ public class Collectionn {//Any Map implementation classes say that my key would
 //
 //	}
 //}
-
-
-
 
 //class Ab {
 //	
@@ -174,8 +304,6 @@ public class Collectionn {//Any Map implementation classes say that my key would
 //	}
 //}
 
-
-
 //class Ab {
 //	
 //	int i = 4;
@@ -218,8 +346,6 @@ public class Collectionn {//Any Map implementation classes say that my key would
 //	}
 //}
 
-
-
 //class Ab {
 //	
 //	int i = 4;
@@ -259,7 +385,6 @@ public class Collectionn {//Any Map implementation classes say that my key would
 //
 //	}
 //}
-
 
 //public class Collectionn {
 //
