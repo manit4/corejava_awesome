@@ -1,0 +1,289 @@
+
+class WaiterThread extends Thread {
+	
+	int total = 0;
+
+	public void run() {
+		
+		for (int i = 0; i < 10; i++) {
+
+			total = total + i;
+			System.out.println("run()");
+		}
+	}
+}
+public class MutilThreadingg {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		WaiterThread abc = new WaiterThread();    abc.setName("abc");
+		
+		abc.start();
+		
+		abc.join();//here "main" thread will be in join with thread "abc" since this statement will be
+					//executed by the "main" thread. that means, post this statement execution, main thread
+					//will go in the waiting state until thread "abc" finished its task... 
+		
+		System.out.println(abc.total);
+	}
+}
+
+
+//class WaiterThread extends Thread {
+//	
+//	int total = 0;
+//
+//	public void run() {
+//		
+//		for (int i = 0; i < 10; i++) {
+//
+//			total = total + i;
+//			System.out.println("run()");
+//		}
+//	}
+//}
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) {
+//
+//		WaiterThread abc = new WaiterThread();    abc.setName("abc");
+//		
+//		abc.start();
+//		
+//		try {
+//			Thread.sleep(100);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
+//		
+//		System.out.println(abc.total);
+//		
+//	}
+//}
+
+
+
+
+//class WaiterThread extends Thread {
+//
+//	public void run() {
+//		
+//		System.out.println(Thread.currentThread().getName());
+//		
+//		for (int i = 0; i < 100; i++) {
+//
+//			System.out.println(Thread.currentThread().getName()+" and i is "+i);
+//		}
+//	}
+//}
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) {
+//
+//		WaiterThread waiter1 = new WaiterThread();    waiter1.setName("abc");
+//		WaiterThread waiter2 = new WaiterThread();    waiter2.setName("xyz");
+//		
+//		waiter1.start();   
+//		
+//		try {
+//			Thread.sleep(5000);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
+//		
+//		waiter2.start();		
+//		
+//		for (int i = 0; i < 10; i++) {
+//
+//			System.out.println(Thread.currentThread().getName()+" and i is "+i);
+//		}
+//	}
+//}
+
+
+
+//
+//class WaiterThread extends Thread {
+//
+//	public void run() {
+//		
+//		System.out.println(Thread.currentThread().getName());
+//		
+//		try {
+//			Thread.sleep(5000);
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}
+//		for (int i = 0; i < 10; i++) {
+//
+//			System.out.println(Thread.currentThread().getName()+" and i is "+i);
+//		}
+//	}
+//}
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) {
+//
+//		WaiterThread waiter1 = new WaiterThread();    waiter1.setName("abc");
+//		WaiterThread waiter2 = new WaiterThread();    waiter2.setName("xyz");
+//		
+//		waiter1.start();     waiter2.start();		
+//		
+//		for (int i = 0; i < 10; i++) {
+//
+//			System.out.println(Thread.currentThread().getName()+" and i is "+i);
+//		}
+//	}
+//}
+
+
+
+//
+//
+//class WaiterThread extends Thread {
+//
+//	public void run() {
+//
+//		for (int i = 0; i < 20; i++) {
+//
+//			System.out.println(Thread.currentThread().getName()+" and i is "+i);
+//		}
+//	}
+//}
+//
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) {
+//
+//		WaiterThread waiter1 = new WaiterThread();
+//		WaiterThread waiter2 = new WaiterThread();
+//		
+//		waiter1.setName("abc");
+//		waiter2.setName("xyz");
+//
+//		waiter1.start();     waiter2.start();
+//
+//	}
+//}
+
+
+//class WaiterThread extends Thread {
+//
+//	public void run() {
+//
+//		for (int i = 0; i < 20; i++) {
+//
+//			System.out.println("WaiterThread " + i);
+//		}
+//	}
+//}
+//
+//class CookThread extends Thread {
+//
+//	public void run() {
+//
+//		for (int i = 0; i < 20; i++) {
+//
+//			System.out.println("CookThread " + i);
+//		}
+//	}
+//}
+//
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) {
+//
+//		WaiterThread waiter1 = new WaiterThread();
+//		WaiterThread waiter2 = new WaiterThread();
+//		CookThread cook = new CookThread();
+//
+//		waiter1.start();     waiter2.start();
+//		cook.start();
+//
+//	}
+//}
+
+//
+//class WaiterThread extends Thread {
+//	
+//	public void run() {
+//		
+//		System.out.println("WaiterThread...");
+//	}
+//}
+//
+//class CookThread extends Thread {
+//	
+//	public void run() {
+//		
+//		System.out.println("CookkThread...");
+//	}
+//}
+//
+//public class MutilThreadingg {
+//	
+//	public static void main(String[] args) {
+//		
+//		WaiterThread waiter = new WaiterThread();
+//		CookThread cook = new CookThread();
+//		
+//		waiter.start();
+//		cook.start();
+//		
+//	}
+//}
+
+//
+//class MyThread extends Thread {
+//	
+//	public void run() {
+//		
+//		for( int i = 0; i < 40; i++ ) {
+//			
+//			System.out.println(i);
+//		}
+//	}
+//}
+//
+//
+//public class MutilThreadingg {
+//	
+//	public static void main(String[] args) {
+//		
+//		MyThread emp1 = new MyThread();
+//		MyThread emp2 = new MyThread();
+//		
+//		emp1.start();
+//		emp2.start();
+//		
+//	}
+//
+//}
+
+//class MyThread extends Thread {
+//	
+//	public void run() {
+//		
+//		System.out.println("inside run()...");
+//	}
+//}
+//
+//
+//public class MutilThreadingg {
+//	
+//	public static void main(String[] args) {
+//		
+//		MyThread emp1 = new MyThread();//This is just normal thread class Object but not the thread of 
+//								//Excecution that means you will not see thread/s are actually waiting for 
+//								//running since for making thread eligible to run then you have to put 
+//							//the thread/s in the Thread Pool and to put the tread in the Thread Pool then
+//						//you have to call start() on each thread.
+//		MyThread emp2 = new MyThread();
+//		
+//		emp1.start();//calling start() on thread class object will put the thread in the Thread Pool and 
+//					//after that thread/s will have to wait for the system to give processor-time to execute 
+//					//or start running....
+//		emp2.start();
+//	}
+//
+//}
