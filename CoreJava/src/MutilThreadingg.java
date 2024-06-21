@@ -1,32 +1,181 @@
+class MyRunnable implements Runnable {
 
-class WaiterThread extends Thread {
-	
 	int total = 0;
 
 	public void run() {
 		
-		for (int i = 0; i < 10; i++) {
-
-			total = total + i;
-			System.out.println("run()");
+		if(Thread.currentThread().getName().equals("Celia")) {
+			try {
+				Thread.sleep(2000);
+			} catch (InterruptedException e) {
+				System.out.println("catch");
+				e.printStackTrace();
+			}
+			System.out.println("The total from the abc thread is "+total);
 		}
-	}
+		else {
+			for (int i = 0; i < 10; i++) {
+
+				total = total + i;
+			}
+			System.out.println("Total is from xyz is "+total);
+		}
+	}	
 }
+
 public class MutilThreadingg {
 
 	public static void main(String[] args) throws InterruptedException {
+		
+		MyRunnable runnable = new MyRunnable();
 
-		WaiterThread abc = new WaiterThread();    abc.setName("abc");
+		Thread t1 = new Thread(runnable);     t1.setName("Celia");
+		Thread t2 = new Thread(runnable);     t2.setName("Eileen");
 		
-		abc.start();
+		t1.start();     t2.start();
 		
-		abc.join();//here "main" thread will be in join with thread "abc" since this statement will be
-					//executed by the "main" thread. that means, post this statement execution, main thread
-					//will go in the waiting state until thread "abc" finished its task... 
-		
-		System.out.println(abc.total);
 	}
 }
+
+
+
+//class MyRunnable implements Runnable {
+//
+//	@Override
+//	public void run() {
+//		
+//		System.out.println("inside run()1");
+//	}	
+//}
+//
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) throws InterruptedException {
+//		
+//		MyRunnable runnable = new MyRunnable();
+//
+//		Thread t1 = new Thread(runnable);     t1.setName("Celia");
+//		Thread t2 = new Thread(runnable);     t2.setName("Eileen");
+//		
+//		t1.start();     t2.start();
+//		
+//	}
+//}
+
+
+
+
+//class PrintingThread extends Thread {
+//	
+//	int total = 0;
+//	
+//	public void run() {
+//		
+//		ComputingThread shwai = new ComputingThread(this);
+//		shwai.start();
+//		try {
+//			shwai.join();
+//		} catch (InterruptedException e) {
+//			e.printStackTrace();
+//		}	
+//		System.out.println("Total is "+total);
+//	}
+//}
+//
+//class ComputingThread extends Thread {
+//	PrintingThread printingThread;
+//	
+//	public ComputingThread(PrintingThread printingThread) {
+//		this.printingThread = printingThread;
+//	}
+//	
+//	public void run() {
+//		
+//		for(int i = 0; i < 10; i++) {
+//			
+//			printingThread.total = printingThread.total + i;
+//		}
+//	}
+//}
+//
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) throws InterruptedException {
+//
+//		PrintingThread eileen = new PrintingThread();    eileen.setName("abc");
+//		eileen.start();	
+//	}
+//}
+
+
+
+//class WaiterThread extends Thread {
+//	
+//	int total = 0;
+//
+//	public void run() {
+//		
+//		if(Thread.currentThread().getName().equals("abc")) {
+//			try {
+//				Thread.sleep(2000);
+//			} catch (InterruptedException e) {
+//				System.out.println("catch");
+//				e.printStackTrace();
+//			}
+//			System.out.println("The total from the abc thread is "+total);
+//		}
+//		else {
+//			for (int i = 0; i < 10; i++) {
+//
+//				total = total + i;
+//			}
+//			System.out.println("Total is from xyz is "+total);
+//		}
+//	}
+//}
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) throws InterruptedException {
+//
+//		WaiterThread abc = new WaiterThread();    abc.setName("abc");
+//		WaiterThread xyz = new WaiterThread();    xyz.setName("xyz");
+//		
+//		abc.start();    xyz.start();
+//		
+//	}
+//}
+
+
+
+
+//class WaiterThread extends Thread {
+//	
+//	int total = 0;
+//
+//	public void run() {
+//		
+//		for (int i = 0; i < 10; i++) {
+//
+//			total = total + i;
+//			System.out.println("run()");
+//		}
+//	}
+//}
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) throws InterruptedException {
+//
+//		WaiterThread abc = new WaiterThread();    abc.setName("abc");
+//		
+//		abc.start();
+//		
+//		abc.join();//here "main" thread will be in join with thread "abc" since this statement will be
+//					//executed by the "main" thread. that means, post this statement execution, main thread
+//					//will go in the waiting state until thread "abc" finished its task... 
+//		
+//		System.out.println(abc.total);
+//	}
+//}
 
 
 //class WaiterThread extends Thread {
