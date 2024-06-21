@@ -1,26 +1,48 @@
+
+
+class BankAccount {
+	
+	private int amount = 50;
+	
+	public void withdraw(int requestedAmount) {
+		
+		amount = amount - requestedAmount;
+	}
+	
+	public int balanceCheck() {
+		
+		return amount;
+	}
+}
+
 class MyRunnable implements Runnable {
+	
+	BankAccount account = new BankAccount();
 
-	int total = 0;
-
+	@Override
 	public void run() {
 		
-		if(Thread.currentThread().getName().equals("Celia")) {
-			try {
-				Thread.sleep(2000);
-			} catch (InterruptedException e) {
-				System.out.println("catch");
-				e.printStackTrace();
+		withdrawl(50);
+	}
+	
+	public void withdrawl(int amount) {
+		
+		System.out.println(Thread.currentThread().getName()+"validating credentials");
+		System.out.println(Thread.currentThread().getName()+"Validating credit score");
+		System.out.println(Thread.currentThread().getName()+"generating PDF Report");
+		System.out.println(Thread.currentThread().getName()+"Closing or Releasing Resources");
+		
+		synchronized (this) {
+			if(account.balanceCheck() >= amount) {
+				
+				System.out.println(Thread.currentThread().getName()+" withdrew amount...");
+				account.withdraw(amount);
 			}
-			System.out.println("The total from the abc thread is "+total);
-		}
-		else {
-			for (int i = 0; i < 10; i++) {
-
-				total = total + i;
+			else {
+				System.out.println(Thread.currentThread().getName()+"is trying to withdraw but Not Enough Amount");
 			}
-			System.out.println("Total is from xyz is "+total);
-		}
-	}	
+		}	
+	}
 }
 
 public class MutilThreadingg {
@@ -28,14 +50,174 @@ public class MutilThreadingg {
 	public static void main(String[] args) throws InterruptedException {
 		
 		MyRunnable runnable = new MyRunnable();
-
-		Thread t1 = new Thread(runnable);     t1.setName("Celia");
-		Thread t2 = new Thread(runnable);     t2.setName("Eileen");
 		
-		t1.start();     t2.start();
+		Thread xi = new Thread(runnable);    xi.setName("xi");
+		Thread eileen = new Thread(runnable);     eileen.setName("eileen");
 		
+		xi.start();      eileen.start();
+				
 	}
 }
+
+
+
+
+//
+//class BankAccount {
+//	
+//	private int amount = 50;
+//	
+//	public void withdraw(int requestedAmount) {
+//		
+//		amount = amount - requestedAmount;
+//	}
+//	
+//	public int balanceCheck() {
+//		
+//		return amount;
+//	}
+//}
+//
+//class MyRunnable implements Runnable {
+//	
+//	BankAccount account = new BankAccount();
+//
+//	@Override
+//	public void run() {
+//		
+//		withdrawl(50);
+//	}
+//	
+//	synchronized public void withdrawl(int amount) {
+//		
+//		
+//		if(account.balanceCheck() >= amount) {
+//	
+//			System.out.println(Thread.currentThread().getName()+" withdrew amount...");
+//			account.withdraw(amount);
+//		}
+//		else {
+//			System.out.println(Thread.currentThread().getName()+"is trying to withdraw but Not Enough Amount");
+//		}	
+//	}
+//}
+//
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) throws InterruptedException {
+//		
+//		MyRunnable runnable = new MyRunnable();
+//		
+//		Thread xi = new Thread(runnable);    xi.setName("xi");
+//		Thread eileen = new Thread(runnable);     eileen.setName("eileen");
+//		
+//		xi.start();      eileen.start();
+//				
+//	}
+//}
+
+
+
+//
+//class BankAccount {
+//	
+//	private int amount = 50;
+//	
+//	public void withdraw(int requestedAmount) {
+//		
+//		amount = amount - requestedAmount;
+//	}
+//	
+//	public int balanceCheck() {
+//		
+//		return amount;
+//	}
+//}
+//
+//class MyRunnable implements Runnable {
+//	
+//	BankAccount account = new BankAccount();
+//
+//	@Override
+//	public void run() {
+//		
+//		withdrawl(50);
+//	}
+//	
+		//public void withdrawl(int amount) {
+//
+//		
+//		if(account.balanceCheck() >= amount) {
+//
+//	try {
+//		Thread.sleep(2000);
+//	}
+//	catch(Exception e) {
+//		
+//	}
+			
+//			System.out.println(Thread.currentThread().getName()+" withdrew amount...");
+//			account.withdraw(amount);
+//		}
+//		else {
+//			System.out.println(Thread.currentThread().getName()+"is trying to withdraw but Not Enough Amount");
+//		}	
+//	}
+//}
+//
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) throws InterruptedException {
+//		
+//		MyRunnable runnable = new MyRunnable();
+//		
+//		Thread xi = new Thread(runnable);    xi.setName("xi");
+//		Thread eileen = new Thread(runnable);     eileen.setName("eileen");
+//		
+//		xi.start();      eileen.start();
+//				
+//	}
+//}
+
+
+//class MyRunnable implements Runnable {
+//
+//	int total = 0;
+//
+//	public void run() {
+//		
+//		if(Thread.currentThread().getName().equals("Celia")) {
+//			try {
+//				Thread.sleep(2000);
+//			} catch (InterruptedException e) {
+//				System.out.println("catch");
+//				e.printStackTrace();
+//			}
+//			System.out.println("The total from the abc thread is "+total);
+//		}
+//		else {
+//			for (int i = 0; i < 10; i++) {
+//
+//				total = total + i;
+//			}
+//			System.out.println("Total is from xyz is "+total);
+//		}
+//	}	
+//}
+//
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) throws InterruptedException {
+//		
+//		MyRunnable runnable = new MyRunnable();
+//
+//		Thread t1 = new Thread(runnable);     t1.setName("Celia");
+//		Thread t2 = new Thread(runnable);     t2.setName("Eileen");
+//		
+//		t1.start();     t2.start();
+//		
+//	}
+//}
 
 
 
