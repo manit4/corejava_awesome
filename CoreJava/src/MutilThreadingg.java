@@ -1,47 +1,20 @@
 
-
-class BankAccount {
+class MyThread extends Thread {
 	
-	private int amount = 50;
+	int total = 0;
 	
-	public void withdraw(int requestedAmount) {
-		
-		amount = amount - requestedAmount;
-	}
-	
-	public int balanceCheck() {
-		
-		return amount;
-	}
-}
-
-class MyRunnable implements Runnable {
-	
-	BankAccount account = new BankAccount();
-
-	@Override
 	public void run() {
 		
-		withdrawl(50);
-	}
-	
-	public void withdrawl(int amount) {
-		
-		System.out.println(Thread.currentThread().getName()+"validating credentials");
-		System.out.println(Thread.currentThread().getName()+"Validating credit score");
-		System.out.println(Thread.currentThread().getName()+"generating PDF Report");
-		System.out.println(Thread.currentThread().getName()+"Closing or Releasing Resources");
-		
-		synchronized (this) {
-			if(account.balanceCheck() >= amount) {
-				
-				System.out.println(Thread.currentThread().getName()+" withdrew amount...");
-				account.withdraw(amount);
-			}
-			else {
-				System.out.println(Thread.currentThread().getName()+"is trying to withdraw but Not Enough Amount");
-			}
+		for( int i = 0; i < 50; i++ ) {
+			
+			total = total + i;
+			
 		}	
+		System.out.println("total is done..."+total);
+		synchronized ( this ) {
+			notify();
+			System.out.println("After notify()");
+		}
 	}
 }
 
@@ -49,15 +22,261 @@ public class MutilThreadingg {
 
 	public static void main(String[] args) throws InterruptedException {
 		
-		MyRunnable runnable = new MyRunnable();
+		MyThread eileen = new MyThread();    eileen.setName("eileen");
 		
-		Thread xi = new Thread(runnable);    xi.setName("xi");
-		Thread eileen = new Thread(runnable);     eileen.setName("eileen");
+		eileen.start();
 		
-		xi.start();      eileen.start();
+		synchronized ( eileen ) {
+			eileen.wait(10000);
+		}	
+		System.out.println("total is "+eileen.total);
 				
 	}
 }
+
+
+
+
+//class MyThread extends Thread {
+//	
+//	int total = 0;
+//	
+//	public void run() {
+//		
+//		for( int i = 0; i < 50; i++ ) {
+//			
+//			total = total + i;
+//			
+//		}	
+//		System.out.println("total is done..."+total);
+//		synchronized ( this ) {
+//			notify();
+//			System.out.println("After notify()");
+//		}
+//	}
+//}
+//
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) throws InterruptedException {
+//		
+//		MyThread eileen = new MyThread();    eileen.setName("eileen");
+//		
+//		eileen.start();
+//		
+//		Thread.sleep(1000);
+//		synchronized ( eileen ) {
+//			eileen.wait(10000);//this wait is overloaded and will stay in the waiting area only for 
+//								//the time specified if not notified....
+//		}	
+//		System.out.println("total is "+eileen.total);
+//				
+//	}
+//}
+
+
+//class MyThread extends Thread {
+//	
+//	int total = 0;
+//	
+//	public void run() {
+//		
+//		for( int i = 0; i < 50; i++ ) {
+//			
+//			total = total + i;
+//			
+//		}	
+//		System.out.println("total is done..."+total);
+//		synchronized ( this ) {
+//			notify();
+//			System.out.println("After notify()");
+//		}
+//	}
+//}
+//
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) throws InterruptedException {
+//		
+//		MyThread eileen = new MyThread();    eileen.setName("eileen");
+//		
+//		eileen.start();
+//		
+//		Thread.sleep(1000);
+//		synchronized ( eileen ) {
+//			eileen.wait();
+//		}	
+//		System.out.println("total is "+eileen.total);
+//				
+//	}
+//}
+
+
+
+//
+//class MyThread extends Thread {
+//	
+//	int total = 0;
+//	
+//	public void run() {
+//		
+//		for( int i = 0; i < 50; i++ ) {
+//			
+//			total = total + i;
+//		}	
+//		synchronized ( this ) {
+//			notify();
+//		}
+//		for( int i = 0; i < 10000; i++ ) {
+//			System.out.println(i);
+//		}
+//	}
+//}
+//
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) throws InterruptedException {
+//		
+//		MyThread eileen = new MyThread();    eileen.setName("eileen");
+//		
+//		eileen.start();
+//		
+//		synchronized ( eileen ) {
+//			System.out.println("inside main synchronised block");
+//			eileen.wait();
+//		}	
+//		System.out.println("total is "+eileen.total);
+//				
+//	}
+//}
+
+
+
+
+//
+//class MyThread extends Thread {
+//	
+//	int total = 0;
+//	
+//	public void run() {
+//		
+//		for( int i = 0; i < 50; i++ ) {
+//			
+//			total = total + i;
+//		}		
+//	}
+//}
+//
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) throws InterruptedException {
+//		
+//		MyThread eileen = new MyThread();    eileen.setName("eileen");
+//		
+//		eileen.start();
+//		
+//		eileen.wait();//here is the exception(IllegalMonitorStateException) since wait(), notify and notifyAll()				
+//					//must be called from the Synchronized block...
+//		
+//		System.out.println("total is "+eileen.total);
+//				
+//	}
+//}
+
+
+
+
+
+//class MyThread extends Thread {
+//	
+//	int total = 0;
+//	
+//	public void run() {
+//		
+//		for( int i = 0; i < 50; i++ ) {
+//			
+//			total = total + i;
+//		}		
+//		for( int i = 0; i < 10000; i++) {
+//			System.out.println(i);
+//		}
+//	}
+//}
+//
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) throws InterruptedException {
+//		
+//		MyThread eileen = new MyThread();    eileen.setName("eileen");
+//		
+//		eileen.start();
+//		
+//		eileen.join(1);//This join() is overloaded and will wait for the time specified not the thread
+//						//joined to go to the dead state...
+//		
+//		System.out.println("total is "+eileen.total);
+//				
+//	}
+//}
+
+//class BankAccount {
+//	
+//	private int amount = 50;
+//	
+//	public void withdraw(int requestedAmount) {
+//		
+//		amount = amount - requestedAmount;
+//	}
+//	
+//	public int balanceCheck() {
+//		
+//		return amount;
+//	}
+//}
+//
+//class MyRunnable implements Runnable {
+//	
+//	BankAccount account = new BankAccount();
+//
+//	@Override
+//	public void run() {
+//		
+//		withdrawl(50);
+//	}
+//	
+//	public void withdrawl(int amount) {
+//		
+//		System.out.println(Thread.currentThread().getName()+"validating credentials");
+//		System.out.println(Thread.currentThread().getName()+"Validating credit score");
+//		System.out.println(Thread.currentThread().getName()+"generating PDF Report");
+//		System.out.println(Thread.currentThread().getName()+"Closing or Releasing Resources");
+//		
+//		synchronized (this) {
+//			if(account.balanceCheck() >= amount) {
+//				
+//				System.out.println(Thread.currentThread().getName()+" withdrew amount...");
+//				account.withdraw(amount);
+//			}
+//			else {
+//				System.out.println(Thread.currentThread().getName()+"is trying to withdraw but Not Enough Amount");
+//			}
+//		}	
+//	}
+//}
+//
+//public class MutilThreadingg {
+//
+//	public static void main(String[] args) throws InterruptedException {
+//		
+//		MyRunnable runnable = new MyRunnable();
+//		
+//		Thread xi = new Thread(runnable);    xi.setName("xi");
+//		Thread eileen = new Thread(runnable);     eileen.setName("eileen");
+//		
+//		xi.start();      eileen.start();
+//				
+//	}
+//}
 
 
 

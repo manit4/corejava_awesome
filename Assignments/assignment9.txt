@@ -1,0 +1,13 @@
+Project Name: MagicOfBooks
+Problem Statement: Magic of Books is a Book store which deals with book. All the inventory of the
+store is been managed manually. but now as store is expanding its becoming difficult to manage it
+manually. Books store wants to have a book management system with following features.
+## User Stories:-
+1. As an User, I should be able to see proper Exception messages for every negative input.
+2. As a User, I should be able to work on a new Thread whenever I log in the application.
+## Instructions: -
+1. Use Week 1 Assignment solution as a boilerplate for week 2.
+2. All the arrays should be converted into Collections.
+3. Please use custom exceptions to display proper error messages.
+4. Zero marks will be awarded if the code throws a compile time error. Partial marking will be
+done only if the code has no compile time error
