@@ -1,66 +1,87 @@
-import java.util.ArrayList;
-import java.util.List;
-
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
 
 
-class Employee {
-	
-	private int empId;
-	private String name;
-	private int salary;
-	private int workX;
-	public Employee() {
-		
-	}
-	public Employee(int empId, String name, int salary, int workX) {
-		super();
-		this.empId = empId;
-		this.name = name;
-		this.salary = salary;
-		this.workX = workX;
-	}
-	public int getEmpId() {
-		return empId;
-	}
-	public void setEmpId(int empId) {
-		this.empId = empId;
-	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
-	public int getSalary() {
-		return salary;
-	}
-	public void setSalary(int salary) {
-		this.salary = salary;
-	}
-	public int getWorkX() {
-		return workX;
-	}
-	public void setWorkX(int workX) {
-		this.workX = workX;
-	}
-}
+//public class Lambdas {
+//	
+//	public static void main(String[] args) {
+//		
+//		Comparable<String> comparable = name -> name.length();
+//		
+//		System.out.println(comparable.compareTo("Eileen"));
+//	}
+//}
 
-public class Lambdas {
-	
-	public static void main(String[] args) {
-		
-		Employee employee = new Employee(100, "Eileen", 2500, 3);
 
-		Function<Employee, Integer> function = emp -> emp.getSalary() * 2;
-		
-		System.out.println(function.apply(employee));
-		
-	}
-}
+//public class Lambdas {
+//	
+//	public static void main(String[] args) {
+//		
+//		Runnable runnable = () -> {
+//			
+//			System.out.println("hi");
+//			System.out.println("Hello");
+//		};
+//		
+//		
+//		runnable.run();
+//	}
+//}
+
+
+
+//class Employee {
+//	
+//	private int empId;
+//	private String name;
+//	private int salary;
+//	private int workX;
+//	public Employee() {
+//		
+//	}
+//	public Employee(int empId, String name, int salary, int workX) {
+//		super();
+//		this.empId = empId;
+//		this.name = name;
+//		this.salary = salary;
+//		this.workX = workX;
+//	}
+//	public int getEmpId() {
+//		return empId;
+//	}
+//	public void setEmpId(int empId) {
+//		this.empId = empId;
+//	}
+//	public String getName() {
+//		return name;
+//	}
+//	public void setName(String name) {
+//		this.name = name;
+//	}
+//	public int getSalary() {
+//		return salary;
+//	}
+//	public void setSalary(int salary) {
+//		this.salary = salary;
+//	}
+//	public int getWorkX() {
+//		return workX;
+//	}
+//	public void setWorkX(int workX) {
+//		this.workX = workX;
+//	}
+//}
+//
+//public class Lambdas {
+//	
+//	public static void main(String[] args) {
+//		
+//		Employee employee = new Employee(100, "Eileen", 2500, 3);
+//
+//		Function<Employee, Integer> function = emp -> emp.getSalary() * 2;
+//		
+//		System.out.println(function.apply(employee));
+//		
+//	}
+//}
 
 //public class Lambdas {//Function itself is another functional interface in which there is a method 
 //		//called apply which accepts one argument of any the and returns you anything... 

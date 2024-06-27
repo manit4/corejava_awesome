@@ -1,0 +1,43 @@
+1. Write a Java program to implement a lambda expression to find the sum of two integers.
+
+
+2. Write a Java program to implement a lambda expression to check if a given string is empty.
+
+
+3. Write a Java program to implement a lambda expression to convert a list of strings to uppercase and lowercase.
+
+
+4. Write a Java program to implement a lambda expression to filter out even and odd numbers from a list of integers.
+
+
+5. Write a Java program to implement a lambda expression to sort a list of strings in alphabetical order.
+
+
+6. Write a Java program to implement a lambda expression to find the average of a list of doubles.
+
+
+7. Write a Java program to implement a lambda expression to remove duplicates from a list of integers.
+
+
+8. Write a lambda expression to implement a lambda expression to calculate the factorial of a given number.
+
+
+9. Write a Java program to implement a lambda expression to create a lambda expression to check if a number is prime.
+
+
+10. Write a Java program to implement a lambda expression to concatenate two strings.
+
+
+11. Write a Java program to implement a lambda expression to find the maximum and minimum values in a list of integers.
+
+
+12. Write a Java program to create a lambda expression to multiply and sum all elements in a list of integers.
+
+
+13. Write a Java program to implement a lambda expression to count words in a sentence.
+
+
+14. Write a Java program to implement a lambda expression to check if a given string is a palindrome.
+
+
+15. Write a Java program to implement a lambda expression to calculate the sum of squares of all odd and even numbers in a list.
