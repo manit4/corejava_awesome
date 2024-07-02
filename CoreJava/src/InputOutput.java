@@ -9,7 +9,8 @@ import java.util.Scanner;
 
 class Employeee implements Serializable {
 
-	private transient String employeeId;
+	private transient String employeeId;//transient is a keyword which makes this variable not saved when you
+								//save the object through serialization...
 	private String employeeName;
 
 	public Employeee() {
