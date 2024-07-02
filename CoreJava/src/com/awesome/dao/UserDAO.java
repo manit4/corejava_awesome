@@ -1,5 +1,8 @@
 package com.awesome.dao;
 
+import java.util.Optional;
+
+import com.awesome.exception.UserNotFoundException;
 import com.awesome.pojo.User;
 
 public class UserDAO {
@@ -43,6 +46,36 @@ public class UserDAO {
 			}
 		}
 		return user;
+	}
+	
+	public Optional<User> findUserOptional(String userId) {
+		Optional<User> optional = Optional.empty();
+
+		for( User user : users ) {
+			
+			if( user.getUserId().equals(userId)) {
+				
+				optional = Optional.of(user);
+			}
+		}
+		return optional;
+
+		
+	}
+	
+	public Object findUserr(String userId) {
+
+		User user = null;
+
+		for (User value : users) {
+
+			if (value.getUserId().equals(userId)) {
+
+				user = value;
+				return user;
+			}
+		}
+		throw new UserNotFoundException("User is not Found by this passed Id "+userId);
 	}
 
 }
