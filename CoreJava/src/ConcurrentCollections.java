@@ -5,8 +5,8 @@ import java.util.concurrent.ConcurrentHashMap;
 
 class MyRunnable implements Runnable {
 
-	//ConcurrentHashMap<Integer, String> map = new ConcurrentHashMap<>();
-	Hashtable<Integer, String> map = new Hashtable<>();//This will be fine as well however, this Hashtable
+	ConcurrentHashMap<Integer, String> map = new ConcurrentHashMap<>();
+	//Hashtable<Integer, String> map = new Hashtable<>();//This will be fine as well however, this Hashtable
 				//class is slower than ConcurrentHashMap...
 
 	public MyRunnable() {
