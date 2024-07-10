@@ -5,13 +5,18 @@
 
 <beans>
 
-<bean name="restaurantBean" class="com.awesome.Restaurant">
+<bean name="restaurantBean" class="com.awesome.Restaurant" lazy-init="true"></bean>
+
+<!-- <bean name="restaurantBean" class="com.awesome.Restaurant" scope="prototype"></bean> -->
+<!-- scope as prototype means, you will have new copy of object every time you ask for it... -->
+
+<!-- <bean name="restaurantBean" class="com.awesome.Restaurant">
 	<constructor-arg ref="teaBean"></constructor-arg>
 </bean>
 
 <bean name="teaBean" class="com.awesome.Tea">
 	<property name="name" value="Ginger Tea"></property>
-</bean>
+</bean> -->
 
 
 

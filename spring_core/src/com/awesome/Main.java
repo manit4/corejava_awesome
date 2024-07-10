@@ -1,35 +1,15 @@
 package com.awesome;
 
-import javax.management.InvalidApplicationException;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-class Tea {
-	
-	String name;
+class Restaurant {// This is the example of lazy-loading, it means, if you are not using object in
+					// the
+	// program, it does not create in advance. It creates only and only if
+	// there is need in the program or somebody ask for it to the IOC container...
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public void prepareTea() {
-
-		System.out.println(name+" is being prepared...");
-	}
-}
-
-class Restaurant {
-
-	Tea tea;
-
-	public Restaurant(Tea tea) {
-		this.tea = tea;
-	}
-
-	public void placeOrder() {
-
-		tea.prepareTea();
+	public Restaurant() {
+		System.out.println("no-arg constr....");
 	}
 }
 
@@ -38,14 +18,113 @@ public class Main {
 	public static void main(String[] args) {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("com\\awesome\\beans.xml");
-
+		
 		Restaurant restaurant = context.getBean("restaurantBean", Restaurant.class);
-
-		restaurant.placeOrder();
 	}
 }
 
+//class Restaurant {//This is the example of lazy-loading, it means, if you are not using object in the 
+//					//program, it does not create in advance. It creates only and only if 
+//					//there is need in the program or somebody ask for it to the IOC container...
+//					//Since, by default, nature is eager-loading but I have set the bean definition
+//					//in the .xml file with "lazy-init=true" which makes it to lazy loading...
+//
+//	public Restaurant() {
+//		System.out.println("no-arg constr....");
+//	}
+//}
+//
+//public class Main {
+//
+//	public static void main(String[] args) {
+//
+//		ApplicationContext context = new ClassPathXmlApplicationContext("com\\awesome\\beans.xml");
+//		System.out.println("inside main()");
+//	}
+//}
 
+//class Restaurant {//This example is for eager-loading which means, whether you use object/bean in your 
+//				//project, it will surely create the object/bean in advance. By default, the nature of
+//				//loading is eager... 
+//
+//	public Restaurant() {
+//		System.out.println("no-arg constr....");
+//	}
+//}
+//
+//public class Main {
+//
+//	public static void main(String[] args) {
+//
+//		ApplicationContext context = new ClassPathXmlApplicationContext("com\\awesome\\beans.xml");
+//
+//	}
+//}
+
+//class Restaurant {//Here is the example of bean scope in spring. By default, the bean scope in spring is Singleton
+//		//which means, you will have single object created and returned whenever you ask for it... 
+//		//However, we can set the bean scope to prototype in bean definition in .xml file which means,
+// it will return you the new object whenever you ask for it....
+//	String name;
+//	
+//	public Restaurant() {
+//		System.out.println("no-arg constr....");
+//	}	
+//}
+//
+//public class Main {
+//
+//	public static void main(String[] args) {
+//
+//		ApplicationContext context = new ClassPathXmlApplicationContext("com\\awesome\\beans.xml");
+//
+//		Restaurant restaurant1 = context.getBean("restaurantBean", Restaurant.class);
+//		System.out.println(restaurant1);
+//		
+//		Restaurant restaurant2 = context.getBean("restaurantBean", Restaurant.class);
+//		System.out.println(restaurant2);
+//	}
+//}
+
+//class Tea {
+//	
+//	String name;
+//
+//	public void setName(String name) {
+//		this.name = name;
+//	}
+//
+//	public void prepareTea() {
+//
+//		System.out.println(name+" is being prepared...");
+//	}
+//}
+//
+//class Restaurant {
+//
+//	Tea tea;
+//
+//	public Restaurant(Tea tea) {
+//		this.tea = tea;
+//	}
+//
+//	public void placeOrder() {
+//
+//		tea.prepareTea();
+//	}
+//}
+//
+//public class Main {
+//
+//	public static void main(String[] args) {
+//
+//		ApplicationContext context = new ClassPathXmlApplicationContext("com\\awesome\\beans.xml");
+//
+//		Restaurant restaurant = context.getBean("restaurantBean", Restaurant.class);
+//
+//		restaurant.placeOrder();
+//	}
+//}
 
 //class Tea {
 //
@@ -85,7 +164,6 @@ public class Main {
 //		restaurant.placeOrder();
 //	}
 //}
-
 
 //class Tea {
 //
@@ -155,7 +233,6 @@ public class Main {
 //	}
 //}
 
-
 //class Restaurant {
 //	
 //	String name;
@@ -181,9 +258,6 @@ public class Main {
 //		System.out.println(restaurant.name);
 //	}
 //}
-
-
-
 
 //class Tea {
 //	
@@ -229,8 +303,6 @@ public class Main {
 //
 //}
 
-
-
 //class Tea {
 //	
 //	public void prepareTea() {
@@ -262,7 +334,6 @@ public class Main {
 //	}
 //
 //}
-
 
 //ApplicationContext context = new ClassPathXmlApplicationContext("com\\awesome\\beans.xml");
 //
@@ -297,8 +368,6 @@ public class Main {
 //
 //}
 
-
-
 //class Restaurant {
 //	
 //	String restName;
@@ -332,8 +401,6 @@ public class Main {
 //
 //}
 
-
-
 //class Restaurant {
 //	
 //	String restName;
@@ -365,7 +432,6 @@ public class Main {
 //
 //}
 
-
 //class Restaurant {
 //
 //	public void prepareTea() {
@@ -392,7 +458,6 @@ public class Main {
 //	}
 //
 //}
-
 
 //class Restaurant {
 //
