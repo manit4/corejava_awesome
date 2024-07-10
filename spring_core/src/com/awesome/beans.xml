@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+        "http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+
+<bean name="restaurantBean" class="com.awesome.Restaurant">
+	<constructor-arg value="Eileen Chains"></constructor-arg>
+</bean>
+
+<!-- <bean name="restaurantBean" class="com.awesome.Restaurant">
+	<property name="restName" value="Jing Chains"></property>
+</bean> -->
+
+</beans>

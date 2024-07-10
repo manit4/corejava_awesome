@@ -1,14 +1,16 @@
 import java.util.Scanner;
 
-public class RegularExpression {//email-id: manit_12@gmail.com
 
-	public static void main(String[] args) {
-		
-		String str = "manit_12@gmail.com";
-		
-		System.out.println(str.matches("[\\w]+[@][a-z]+[\\.][a-z]{2,3}"));
-	}
-}
+
+//public class RegularExpression {//email-id: manit_12@gmail.com
+//
+//	public static void main(String[] args) {
+//		
+//		String str = "manit_12@gmail.com";
+//		
+//		System.out.println(str.matches("[\\w]+[@][a-z]+[\\.][a-z]{2,3}"));
+//	}
+//}
 
 
 //public class RegularExpression {

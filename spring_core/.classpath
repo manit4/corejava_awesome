@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-17">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Manit Hira/Downloads/ExaData_1/jar_files/spring-jcl-6.1.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Manit Hira/Downloads/ExaData_1/jar_files/spring-core-6.1.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Manit Hira/Downloads/ExaData_1/jar_files (1)/micrometer-observation-1.12.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Manit Hira/Downloads/ExaData_1/jar_files (1)/spring-beans-6.1.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Manit Hira/Downloads/ExaData_1/jar_files (1)/spring-context-6.1.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Manit Hira/Downloads/ExaData_1/jar_files (1)/micrometer-commons-1.12.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Manit Hira/Downloads/ExaData_1/jar_files (1)/spring-aop-6.1.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Manit Hira/Downloads/ExaData_1/jar_files (1)/spring-core-6.1.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Manit Hira/Downloads/ExaData_1/jar_files (1)/spring-expression-6.1.10.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Manit Hira/Downloads/ExaData_1/jar_files (1)/spring-jcl-6.1.10.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
