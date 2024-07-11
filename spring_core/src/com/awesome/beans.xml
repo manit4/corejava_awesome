@@ -5,7 +5,55 @@
 
 <beans>
 
-<bean name="restaurantBean" class="com.awesome.Restaurant" lazy-init="true"></bean>
+<bean name="address" class="com.awesome.Address">
+	<property name="addressId" value="a_a1"></property>
+	<property name="city" value="Shanghai"></property>
+	<property name="state" value="Jaingsu"></property>
+</bean>
+
+<bean name="employeeBean" class="com.awesome.Employee" autowire="constructor">
+</bean>
+
+
+
+
+<!-- <bean name="address" class="com.awesome.Address">
+	<property name="addressId" value="a_a1"></property>
+	<property name="city" value="Shanghai"></property>
+	<property name="state" value="Jaingsu"></property>
+</bean>
+
+<bean name="employeeBean" class="com.awesome.Employee" autowire="byName">
+</bean> -->
+
+
+
+<!-- <bean name="addressBean" class="com.awesome.Address">
+	<property name="addressId" value="a_a1"></property>
+	<property name="city" value="Shanghai"></property>
+	<property name="state" value="Jaingsu"></property>
+</bean>
+
+<bean name="employeeBean" class="com.awesome.Employee" autowire="byType">
+</bean> -->
+
+
+
+<!-- above is the configuration for auto-wire -->
+
+<!-- <bean name="addressBean" class="com.awesome.Address">
+	<property name="addressId" value="a_a1"></property>
+	<property name="city" value="Shanghai"></property>
+	<property name="state" value="Jaingsu"></property>
+</bean>
+
+<bean name="employee" class="com.awesome.Employee">
+	<property name="address" ref="addressBean"></property>
+</bean> -->
+
+
+
+<!-- <bean name="restaurantBean" class="com.awesome.Restaurant" lazy-init="true"></bean> -->
 
 <!-- <bean name="restaurantBean" class="com.awesome.Restaurant" scope="prototype"></bean> -->
 <!-- scope as prototype means, you will have new copy of object every time you ask for it... -->

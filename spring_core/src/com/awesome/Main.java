@@ -3,25 +3,55 @@ package com.awesome;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-class Restaurant {// This is the example of lazy-loading, it means, if you are not using object in
-					// the
-	// program, it does not create in advance. It creates only and only if
-	// there is need in the program or somebody ask for it to the IOC container...
-
-	public Restaurant() {
-		System.out.println("no-arg constr....");
-	}
-}
-
 public class Main {
 
 	public static void main(String[] args) {
 
 		ApplicationContext context = new ClassPathXmlApplicationContext("com\\awesome\\beans.xml");
+
+		Employee employee = context.getBean("employeeBean", Employee.class);
 		
-		Restaurant restaurant = context.getBean("restaurantBean", Restaurant.class);
+		System.out.println(employee.getAddress().getCity());
+			
 	}
 }
+
+
+
+
+
+//public class Main {
+//
+//	public static void main(String[] args) {
+//
+//		Address address = new Address("a_001", "Mumbai", "Maharashtra");
+//		
+//		Employee employee = new Employee(address);
+//		
+//		System.out.println(employee.getAddress().getAddressId());
+//			
+//	}
+//}
+
+//class Restaurant {// This is the example of lazy-loading, it means, if you are not using object in
+//					// the
+//	// program, it does not create in advance. It creates only and only if
+//	// there is need in the program or somebody ask for it to the IOC container...
+//
+//	public Restaurant() {
+//		System.out.println("no-arg constr....");
+//	}
+//}
+//
+//public class Main {
+//
+//	public static void main(String[] args) {
+//
+//		ApplicationContext context = new ClassPathXmlApplicationContext("com\\awesome\\beans.xml");
+//		
+//		Restaurant restaurant = context.getBean("restaurantBean", Restaurant.class);
+//	}
+//}
 
 //class Restaurant {//This is the example of lazy-loading, it means, if you are not using object in the 
 //					//program, it does not create in advance. It creates only and only if 
