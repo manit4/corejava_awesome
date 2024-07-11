@@ -3,4 +3,25 @@
   <groupId>com.spring</groupId>
   <artifactId>spring_autowire</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  <dependencies>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-core -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>6.1.10</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>6.1.10</version>
+		</dependency>
+
+
+	</dependencies>
+  
+  
 </project>

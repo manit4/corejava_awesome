@@ -2,6 +2,10 @@ package com.spring;
 
 import java.util.Scanner;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+import com.spring.config.ApplicationConfig;
 import com.spring.pojo.User;
 import com.spring.service.UserService;
 
@@ -9,8 +13,10 @@ public class Runner {
 	
 	public static void main(String[] args) {
 		
+		ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+		UserService userService = context.getBean("userService", UserService.class);
+		
 		boolean flag = true;
-		UserService userService = new UserService();
 		
 		while(flag) {
 			
