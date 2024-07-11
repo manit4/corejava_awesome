@@ -2,7 +2,7 @@ package com.chinese.awesome;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component(value = "eileenBean")
 public class Address {
 	
 	private String addressId;
