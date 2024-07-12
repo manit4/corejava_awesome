@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.spring.pojo.User;
 
 @Repository
-public class UserDAO {
+public class UserDAOImpl implements IUserDAO {
 	
 	List<User> users = new ArrayList<User>();
 	
@@ -29,6 +29,11 @@ public class UserDAO {
 			}
 		}
 		return user;
+	}
+
+	public List<User> allUsers() {
+		
+		return users;
 	}
 
 }

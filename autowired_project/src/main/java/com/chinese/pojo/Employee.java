@@ -1,6 +1,7 @@
 package com.chinese.pojo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import com.chinese.awesome.Address;
@@ -10,6 +11,8 @@ public class Employee {
 	
 	@Autowired
 	private Address address;
+	
+	
 
 	public Employee() {
 		System.out.println("no-arg constr Employee");

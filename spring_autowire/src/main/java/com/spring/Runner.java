@@ -7,14 +7,19 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.spring.config.ApplicationConfig;
 import com.spring.pojo.User;
-import com.spring.service.UserService;
+import com.spring.service.UserServiceImpl;
 
 public class Runner {
 	
 	public static void main(String[] args) {
 		
 		ApplicationContext context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
-		UserService userService = context.getBean("userService", UserService.class);
+		UserServiceImpl userService = context.getBean("userServiceImpl", UserServiceImpl.class);
+		System.out.println("userService "+userService);
+		
+		UserServiceImpl userService2 = context.getBean("userServiceImpl", UserServiceImpl.class);
+		System.out.println("userService2 "+userService2);
+		
 		
 		boolean flag = true;
 		
