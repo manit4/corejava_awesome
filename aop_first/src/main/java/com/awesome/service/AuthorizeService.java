@@ -17,11 +17,11 @@ public class AuthorizeService {//AuthorizeService is an Aspect
 		System.out.println("User is Verified....");
 	}
 	
-	@After("execution(* com.awesome.service.PaymentService.makePayment())")
-	public void closingResources() {//validateUser() is an advice
-		
-		System.out.println("Resources Closing....");
-	}
+//	@After("execution(* com.awesome.service.PaymentService.makePayment())")
+//	public void closingResources() {//validateUser() is an advice
+//		
+//		System.out.println("Resources Closing....");
+//	}
 
 }
 
