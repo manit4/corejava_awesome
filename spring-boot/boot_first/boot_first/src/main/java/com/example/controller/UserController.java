@@ -4,8 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.model.Login;
 import com.example.model.User;
 
 @RestController
@@ -16,7 +20,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/msg")
-	public String firstMessage() {
+	public String firstMessage() {//This api will return data in plane text as a response
 		
 		return "I am home page from firstMessage()";
 	}
@@ -28,7 +32,7 @@ public class UserController {
 	}
 	
 	@GetMapping("/getUser")
-	public User getUser() {
+	public User getUser() {//This api will return data in JSON format as a response
 		
 		User user = new User("eileen01", "1234", "Eileen");
 		
@@ -36,7 +40,7 @@ public class UserController {
 	}
 
 	@GetMapping("/allUsers")
-	public List<User> getUsers() {
+	public List<User> getUsers() {//This api will return data in JSON format as a response
 		
 		List<User> users = new ArrayList<>();
 		
@@ -48,4 +52,23 @@ public class UserController {
 		
 		return users;
 	}
+	
+	@GetMapping("/userById/{userId}")
+	public User findUserById(@PathVariable String userId) {
+		
+		System.out.println("inside findUserById..."+userId);
+		
+		User user = new User("eileen01", "1234", "Eileen");
+		
+		return user;
+	}
+	
+	@PostMapping("/login")
+	public String login( @RequestBody Login login) {
+		
+		System.out.println(login.getUsername()+", "+login.getPassword());
+		
+		return "Login Successfull";
+	}
+	
 }
