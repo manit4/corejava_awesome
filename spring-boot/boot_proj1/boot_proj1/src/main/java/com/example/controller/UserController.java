@@ -8,23 +8,25 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.model.Login;
 import com.example.model.User;
 import com.example.repository.IUserRepository;
+import com.example.service.IUserService;
 
 @RestController
 public class UserController {
 	
 	@Autowired
-	IUserRepository userRepository;
+	IUserService userService;
 	
 	public UserController() {
 		System.out.println("no-rg UserController constr...");
 	}
 	
 	@PostMapping("/signup")
-	public String register( @RequestBody User signup) {
+	public String register( @RequestBody User user) {
 		
-		System.out.println(signup.getUsername()+", "+signup.getPassword());
+		System.out.println(user.getUsername()+", "+user.getPassword());
 		
-		userRepository.addUser(signup);
+		//userRepository.addUser(signup);
+		userService.signup(user);
 		
 		return "Signup Successfull";
 	}
@@ -36,12 +38,12 @@ public class UserController {
 		
 		System.out.println(login.getUsername()+", "+login.getPassword());
 		
-		User user = userRepository.findUser(login.getUsername(), login.getPassword());
+		//User user = userRepository.findUser(login.getUsername(), login.getPassword());
 		
-		if( user != null) {
-			
-			status = "Login Successfull";
-		}
+//		if( user != null) {
+//			
+//			status = "Login Successfull";
+//		}
 		return status;
 	}
 	
