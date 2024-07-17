@@ -14,36 +14,43 @@
 <body>
 	<div style="margin-left: 280px; font-size: 50px; color: red;">Welcome
 		To ECommerce Application</div>
-	<div style="margin-left: 400px; font-size: 30px; color: blue;">Provide your Details for Registration</div>
+	<div style="margin-left: 400px; font-size: 30px; color: blue;">Provide
+		your Details for Registration</div>
 	<div style="margin-left: 500px; margin-right: 500px">
-		<div class="mb-3">
-			<label for="exampleFormControlInput1" class="form-label">Username</label>
-			<input type="text" class="form-control" id="exampleFormControlInput1"
-				placeholder="Provide your Username">
-		</div>
-		<div class="mb-3">
-			<label for="exampleFormControlInput1" class="form-label">Password</label>
-			<input type="text" class="form-control" id="exampleFormControlInput1"
-				placeholder="Provide your Password">
-		</div>
-		
-		<div class="mb-3">
-			<label for="exampleFormControlInput1" class="form-label">Complete Name</label>
-			<input type="text" class="form-control" id="exampleFormControlInput1"
-				placeholder="Provide your Complete Name">
-		</div>
-		
-		<div class="mb-3">
-			<label for="exampleFormControlInput1" class="form-label">Email Address</label>
-			<input type="text" class="form-control" id="exampleFormControlInput1"
-				placeholder="Provide your Email Address">
-		</div>
+		<form action="/register" method="post">
 
-		<button style="margin-left: 100px" type="button"
-			class="btn btn-primary">Register</button>
-		<br>
-		<br> <a style="margin-left: 50px" href="/">Back to Index Page!!</a>
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Username</label>
+				<input type="text" class="form-control"
+					id="exampleFormControlInput1" placeholder="Provide your Username" name="username">
+			</div>
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Password</label>
+				<input type="text" class="form-control"
+					id="exampleFormControlInput1" placeholder="Provide your Password" name="password">
+			</div>
 
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Complete
+					Name</label> <input type="text" class="form-control"
+					id="exampleFormControlInput1"
+					placeholder="Provide your Complete Name" name="cName">
+			</div>
+
+			<div class="mb-3">
+				<label for="exampleFormControlInput1" class="form-label">Email
+					Address</label> <input type="text" class="form-control"
+					id="exampleFormControlInput1"
+					placeholder="Provide your Email Address" name="email">
+			</div>
+
+			<button style="margin-left: 100px" type="submit"
+				class="btn btn-primary">Register</button>
+
+
+		</form>
+		<br> <br> <a style="margin-left: 50px" href="/">Back to
+			Index Page!!</a>
 	</div>
 </body>
 </html>
