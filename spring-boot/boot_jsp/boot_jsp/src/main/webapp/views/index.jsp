@@ -14,22 +14,29 @@
 <body>
 	<div style="margin-left: 280px; font-size: 50px; color: red;">Welcome
 		To ECommerce Application</div>
+
+	<div style="margin-left: 500px; color: green;">${registerSuccess}</div>
+	<div style="margin-left: 500px; color: red;">${loginSuccessStatus}</div>
+<form action="/login" method="post">
 	<div style="margin-left: 500px; margin-right: 500px">
 		<div class="mb-3">
 			<label for="exampleFormControlInput1" class="form-label">Username</label>
 			<input type="text" class="form-control" id="exampleFormControlInput1"
-				placeholder="Provide your Username">
+				placeholder="Provide your Username" name="username">
 		</div>
 		<div class="mb-3">
 			<label for="exampleFormControlInput1" class="form-label">Password</label>
 			<input type="text" class="form-control" id="exampleFormControlInput1"
-				placeholder="Provide your Password">
+				placeholder="Provide your Password" name="password">
 		</div>
-		
-		<button style="margin-left: 100px" type="button" class="btn btn-primary">Login</button><br><br>
-		
-		<a style="margin-left: 50px" href="/signup_page">New User? Register Here!!</a>
-		
+
+		<button style="margin-left: 100px" type="submit"
+			class="btn btn-primary">Login</button>
+			</form>
+		<br>
+		<br> <a style="margin-left: 50px" href="/signup_page">New
+			User? Register Here!!</a>
+
 	</div>
 
 </body>

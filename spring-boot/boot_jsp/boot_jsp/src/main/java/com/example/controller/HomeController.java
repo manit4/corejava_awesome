@@ -1,13 +1,22 @@
 package com.example.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.example.model.User;
+import com.example.service.IUserService;
+
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 @Controller//This @Controller is supposed to return HTML/JSP page but not plain text/JSON/XML Data....
 public class HomeController {
+	
+	@Autowired
+	IUserService userService;
 
 	@GetMapping("/")// "/" represents the very first page of your application 
 	public String homePage() {
@@ -34,14 +43,59 @@ public class HomeController {
 //		return "index";
 //	}
 	
+//	@PostMapping("/register")
+//	public String registerUser(User user) {
+//		
+//		System.out.println("inside register()..."+user.getUsername()+", "+user.getPassword()+", "+user.getCName()+", "+user.getEmail());
+//		
+//		return "index";
+//	}
+	
 	@PostMapping("/register")
-	public String registerUser(User user) {
+	public ModelAndView registerUser(User user) {
 		
 		System.out.println("inside register()..."+user.getUsername()+", "+user.getPassword()+", "+user.getCName()+", "+user.getEmail());
 		
-		return "index";
+		userService.addUser(user);
+		
+		ModelAndView modelAndView = new ModelAndView("index");
+		modelAndView.addObject("registerSuccess", "Registration Successfull, Now Please Login!!");
+		
+		return modelAndView;
 	}
 	
+//	@PostMapping("/login")
+//	public String login(String username, String password) {
+//		
+//		System.out.println(username+", "+password);
+//		
+//		String viewName = "index";
+//		
+//		User user = userService.login(username, password);
+//		 if( user != null ) {
+//			 
+//			 viewName = "welcome_page";
+//		 }
+//		return viewName;
+//	}
 	
+	@PostMapping("/login")
+	public ModelAndView login(String username, String password) {
+		
+		System.out.println(username+", "+password);
+		
+		ModelAndView modelAndView = null;
+		
+		User user = userService.login(username, password);
+		 if( user != null ) {
+			 
+			 modelAndView = new ModelAndView("welcome_page");
+		 }
+		 else {
+			 modelAndView = new ModelAndView("index");
+			 modelAndView.addObject("loginSuccessStatus", "Login Failed, Please Try Again!!");
+		 }
+		return modelAndView;
+	}
 	
 }
