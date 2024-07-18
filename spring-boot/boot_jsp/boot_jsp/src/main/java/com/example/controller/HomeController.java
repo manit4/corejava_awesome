@@ -90,10 +90,11 @@ public class HomeController {
 		 if( user != null ) {
 			 
 			 modelAndView = new ModelAndView("welcome_page");
+			 modelAndView.addObject("loggedInUser", user);
 		 }
 		 else {
 			 modelAndView = new ModelAndView("index");
-			 modelAndView.addObject("loginSuccessStatus", "Login Failed, Please Try Again!!");
+			 modelAndView.addObject("loginFailedStatus", "Login Failed, Please Try Again!!");
 		 }
 		return modelAndView;
 	}

@@ -16,7 +16,7 @@
 		To ECommerce Application</div>
 
 	<div style="margin-left: 500px; color: green;">${registerSuccess}</div>
-	<div style="margin-left: 500px; color: red;">${loginSuccessStatus}</div>
+	<div style="margin-left: 500px; color: red;">${loginFailedStatus}</div>
 <form action="/login" method="post">
 	<div style="margin-left: 500px; margin-right: 500px">
 		<div class="mb-3">
