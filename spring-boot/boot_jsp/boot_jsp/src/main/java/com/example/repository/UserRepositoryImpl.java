@@ -39,4 +39,10 @@ public class UserRepositoryImpl implements IUserRepository {
 		return user;
 	}
 
+	@Override
+	public List<User> allUsers() {
+		
+		return users;
+	}
+
 }
