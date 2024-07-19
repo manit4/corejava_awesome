@@ -55,7 +55,9 @@
 			</div>
 
 			<div class="col-md-8">
-
+				<div style="color: blue; font-size: 30px; margin-left: 180px; font-weight: bold;">Below are the Users available</div>
+				<% if( users.size() > 0 ) { %>
+				
 				<table class="table" style="float: right;">
 					<thead>
 						<tr>
@@ -78,7 +80,7 @@
 										the java code in it...-->
 							<td><%=users.get(i).getCName()%></td>
 							<td><%=users.get(i).getEmail()%></td>
-							<td><a href="">Delete</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Update</a></td>
+							<td><a href="/delete/<%=users.get(i).getUsername()%>">Delete</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Update</a></td>
 						</tr>
 						<%
 						}
@@ -86,6 +88,11 @@
 
 					</tbody>
 				</table>
+				<%}
+				else {
+				%>
+				No Record Found
+				<% } %>
 
 			</div>
 		</div>

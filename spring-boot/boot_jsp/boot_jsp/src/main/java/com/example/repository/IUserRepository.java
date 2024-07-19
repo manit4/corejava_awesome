@@ -11,4 +11,6 @@ public interface IUserRepository {
 	public User findUser(String username, String password);
 	
 	public List<User> allUsers();
+	
+	public String delete(String userId);
 }

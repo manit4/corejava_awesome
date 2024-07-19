@@ -32,4 +32,10 @@ public class UserServiceImpl implements IUserService {
 		return userRepository.allUsers();
 	}
 
+	@Override
+	public String deleteUser(String userId) {
+		
+		return userRepository.delete(userId);
+	}
+
 }

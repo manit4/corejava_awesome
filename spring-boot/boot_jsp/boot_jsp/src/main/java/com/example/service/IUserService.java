@@ -11,4 +11,6 @@ public interface IUserService {
 	public User login(String username, String password);
 	
 	public List<User> getAllUsers();
+	
+	public String deleteUser(String userId);
 }
