@@ -10,6 +10,9 @@ import org.springframework.web.servlet.ModelAndView;
 import com.example.model.User;
 import com.example.service.IUserService;
 
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class MasterController {
 	
@@ -26,14 +29,27 @@ public class MasterController {
 	
 	
 	@GetMapping("/master")
-	public ModelAndView masterModule() {
+	public ModelAndView masterModule(HttpServletRequest request) {
+		
+		ModelAndView modelAndView = null;
 		
 		System.out.println("inside masterModule()");
 		
-		List<User> users = userService.getAllUsers();
+		HttpSession session = request.getSession(false);
+		System.out.println("session is "+session);
 		
-		ModelAndView modelAndView = new ModelAndView("master_page");
-		modelAndView.addObject("users", users);
+		if(session != null) {
+			List<User> users = userService.getAllUsers();
+			
+			modelAndView = new ModelAndView("master_page");
+			modelAndView.addObject("users", users);	
+		}
+		else {
+			modelAndView = new ModelAndView("index");
+			modelAndView.addObject("unauthorizedMessage", "You are not authorised, please login first");
+		}
+		
+		
 		
 		return modelAndView;
 	}

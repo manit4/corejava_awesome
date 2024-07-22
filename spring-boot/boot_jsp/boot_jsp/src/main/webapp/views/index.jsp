@@ -12,8 +12,13 @@
 	crossorigin="anonymous">
 </head>
 <body>
+
+
 	<div style="margin-left: 280px; font-size: 50px; color: red;">Welcome
 		To ECommerce Application</div>
+
+	
+	${unauthorizedMessage }
 
 	<div style="margin-left: 500px; color: green;">${registerSuccess}</div>
 	<div style="margin-left: 500px; color: red;">${loginFailedStatus}</div>

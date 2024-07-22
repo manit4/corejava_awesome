@@ -11,6 +11,7 @@ import com.example.service.IUserService;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @Controller//This @Controller is supposed to return HTML/JSP page but not plain text/JSON/XML Data....
 public class HomeController {
@@ -80,14 +81,17 @@ public class HomeController {
 //	}
 	
 	@PostMapping("/login")
-	public ModelAndView login(String username, String password) {
+	public ModelAndView login(String username, String password, HttpServletRequest request) {
 		
-		System.out.println(username+", "+password);
+		System.out.println(username+", "+password+", and the request is "+request);
 		
 		ModelAndView modelAndView = null;
 		
 		User user = userService.login(username, password);
 		 if( user != null ) {
+			 
+			 HttpSession session = request.getSession();
+			 System.out.println("session is "+session.getId());
 			 
 			 modelAndView = new ModelAndView("welcome_page");
 			 modelAndView.addObject("loggedInUser", user);

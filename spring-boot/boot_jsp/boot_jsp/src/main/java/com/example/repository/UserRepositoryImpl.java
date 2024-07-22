@@ -121,7 +121,7 @@ public class UserRepositoryImpl implements IUserRepository {
 			counter++;
 		}
 		
-		users.set(counter, user);
+		users.set(counter, 	user);
 	}
 
 }
