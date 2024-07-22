@@ -19,10 +19,18 @@
 	<%
 	//this is scriptlet tag and is not part of a response but we use it to process data in java code
 	List<User> users = (List<User>) request.getAttribute("users");
+	String updateMessage = (String) request.getAttribute("updateMsg");
 	%>
 
 	<jsp:include page="header.jsp"></jsp:include>
-	
+
+	<%
+	if (updateMessage != null) {
+	%>
+	<div>Record is Updated</div>
+	<%
+	}
+	%>
 	<div class="container" style="margin-top: 30px">
 		<div class="row">
 			<div class="col-md-3" style="margin-right: 20px">
@@ -55,9 +63,13 @@
 			</div>
 
 			<div class="col-md-8">
-				<div style="color: blue; font-size: 30px; margin-left: 180px; font-weight: bold;">Below are the Users available</div>
-				<% if( users.size() > 0 ) { %>
-				
+				<div
+					style="color: blue; font-size: 30px; margin-left: 180px; font-weight: bold;">Below
+					are the Users available</div>
+				<%
+				if (users.size() > 0) {
+				%>
+
 				<table class="table" style="float: right;">
 					<thead>
 						<tr>
@@ -80,7 +92,8 @@
 										the java code in it...-->
 							<td><%=users.get(i).getCName()%></td>
 							<td><%=users.get(i).getEmail()%></td>
-							<td><a href="/delete/<%=users.get(i).getUsername()%>">Delete</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="">Update</a></td>
+							<td><a href="/delete/<%=users.get(i).getUsername()%>">Delete</a>&nbsp;&nbsp;&nbsp;&nbsp;<a
+								href="/update_page/<%=users.get(i).getUsername()%>">Update</a></td>
 						</tr>
 						<%
 						}
@@ -88,11 +101,13 @@
 
 					</tbody>
 				</table>
-				<%}
-				else {
+				<%
+				} else {
 				%>
 				No Record Found
-				<% } %>
+				<%
+				}
+				%>
 
 			</div>
 		</div>

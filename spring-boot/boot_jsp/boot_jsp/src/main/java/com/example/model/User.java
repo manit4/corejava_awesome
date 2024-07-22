@@ -15,4 +15,9 @@ public class User {
 	private String password;
 	private String cName;
 	private String email;
+	
+	public String toString() {
+		
+		return username+", "+password+", "+cName+", "+email;
+	}
 }

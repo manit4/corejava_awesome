@@ -8,11 +8,16 @@ import org.springframework.stereotype.Repository;
 
 import com.example.model.User;
 
+import lombok.val;
+
 @Repository
 public class UserRepositoryImpl implements IUserRepository {
 	
-	List<User> users = new CopyOnWriteArrayList<>();
-	
+//	List<User> users = new CopyOnWriteArrayList<>();//I am using CopyOnWriteArrayList which is Concurrent
+//				//Collection. Reason being since I am iterating as well as removing and adding the same
+//					//list simultaneouly in delete and update methods. Out of thread-safety, Arraylist
+//				//returned me ConcurrentModificationException...
+	List<User> users = new ArrayList<>();
 	public UserRepositoryImpl() {
 		
 		User user1 = new User("eileen@123", "123", "Eileen Zheng", "eileen@gmail.com");
@@ -67,6 +72,56 @@ public class UserRepositoryImpl implements IUserRepository {
 		}
 		
 		return "User Deleted";
+	}
+
+	@Override
+	public User findUser(String username) {
+		
+		User user = null;
+		
+		for( User value : users ) {
+			
+			if(username.equals(value.getUsername())) {
+				
+				user = value;
+				break;
+			}
+		}
+		
+		return user;
+	}
+
+//	@Override
+//	public void updateUser(User user) {
+//		
+//		for( User value : users ) {
+//			
+//			if(value.getUsername().equals(user.getUsername())) {
+//				System.out.println("size is beofre remove "+users.size());
+//				users.remove(value);
+//				System.out.println("size is after remove "+users.size());
+//				users.add(user);
+//				System.out.println("size is after add "+users.size());
+//			}
+//		}
+//		
+//	}
+	
+	@Override
+	public void updateUser(User user) {
+		
+		int counter = 0;
+		
+		for( User value : users ) {
+			
+			if(value.getUsername().equals(user.getUsername())) {
+				
+				break;
+			}
+			counter++;
+		}
+		
+		users.set(counter, user);
 	}
 
 }

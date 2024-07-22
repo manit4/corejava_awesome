@@ -38,4 +38,17 @@ public class UserServiceImpl implements IUserService {
 		return userRepository.delete(userId);
 	}
 
+	@Override
+	public User findUser(String username) {
+
+		return userRepository.findUser(username);
+	}
+
+	@Override
+	public void updateUser(User user) {
+		
+		userRepository.updateUser(user);
+		
+	}
+
 }

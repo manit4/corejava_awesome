@@ -13,4 +13,8 @@ public interface IUserService {
 	public List<User> getAllUsers();
 	
 	public String deleteUser(String userId);
+	
+	public User findUser(String username);
+	
+	public void updateUser(User user); 
 }
