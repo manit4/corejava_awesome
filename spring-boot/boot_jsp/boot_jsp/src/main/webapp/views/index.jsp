@@ -19,6 +19,7 @@
 
 	
 	${unauthorizedMessage }
+	${unauthenticatedMessage }
 
 	<div style="margin-left: 500px; color: green;">${registerSuccess}</div>
 	<div style="margin-left: 500px; color: red;">${loginFailedStatus}</div>

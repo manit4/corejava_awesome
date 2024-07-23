@@ -15,10 +15,10 @@ import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class MasterController {
-	
+
 	@Autowired
 	IUserService userService;
-	
+
 //	@GetMapping("/master")
 //	public String masterModule() {
 //		
@@ -26,31 +26,35 @@ public class MasterController {
 //		
 //		return "master_page";
 //	}
-	
-	
+
 	@GetMapping("/master")
 	public ModelAndView masterModule(HttpServletRequest request) {
-		
+
 		ModelAndView modelAndView = null;
-		
+
 		System.out.println("inside masterModule()");
-		
+
 		HttpSession session = request.getSession(false);
-		System.out.println("session is "+session);
-		
-		if(session != null) {
-			List<User> users = userService.getAllUsers();
-			
-			modelAndView = new ModelAndView("master_page");
-			modelAndView.addObject("users", users);	
-		}
-		else {
+		System.out.println("session is " + session);
+
+		if (session != null) {
+
+			if (((User) session.getAttribute("loggedInUser")).getRole().equals("Admin")) {
+				List<User> users = userService.getAllUsers();
+
+				modelAndView = new ModelAndView("master_page");
+				modelAndView.addObject("users", users);
+			}
+			else {
+				modelAndView = new ModelAndView("index");
+				modelAndView.addObject("unauthorizedMessage", "You are not authorised, please login with Admin Credentials");
+			}
+
+		} else {
 			modelAndView = new ModelAndView("index");
-			modelAndView.addObject("unauthorizedMessage", "You are not authorised, please login first");
+			modelAndView.addObject("unauthenticatedMessage", "You are not authenticated, please login first");
 		}
-		
-		
-		
+
 		return modelAndView;
 	}
 

@@ -91,10 +91,11 @@ public class HomeController {
 		 if( user != null ) {
 			 
 			 HttpSession session = request.getSession();
-			 System.out.println("session is "+session.getId());
+			 //System.out.println("session is "+session.getId());
 			 
 			 modelAndView = new ModelAndView("welcome_page");
-			 modelAndView.addObject("loggedInUser", user);
+			//modelAndView.addObject("loggedInUser", user);
+			 session.setAttribute("loggedInUser", user);
 		 }
 		 else {
 			 modelAndView = new ModelAndView("index");

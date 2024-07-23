@@ -17,10 +17,14 @@
 
 	<%
 		User user = (User) request.getAttribute("user");
+		
+		User userInSession = (User) session.getAttribute("loggedInUser");
 	%>
 
 	<div style="margin-left: 280px; font-size: 50px; color: red;">Welcome
 		To ECommerce Application</div>
+		<div style="font-size: 30px; color: blue; margin-left: 300px">
+		<%= userInSession.getCName() %>, Welcome To Ecommerce Application...</div>
 	<div style="margin-left: 400px; font-size: 30px; color: blue;">Update Your Information</div>
 	<div style="margin-left: 500px; margin-right: 500px">
 		<form action="/update" method="post">

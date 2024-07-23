@@ -15,6 +15,7 @@ public class User {
 	private String password;
 	private String cName;
 	private String email;
+	private String role;
 	
 	public String toString() {
 		

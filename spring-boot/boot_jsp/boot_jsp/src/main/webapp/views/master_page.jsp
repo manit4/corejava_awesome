@@ -24,6 +24,8 @@
 
 	<jsp:include page="header.jsp"></jsp:include>
 
+	<div style="font-size: 30px; color: blue; margin-left: 300px">
+		${loggedInUser.getCName()}, Welcome To Ecommerce Application...</div>
 	<%
 	if (updateMessage != null) {
 	%>
