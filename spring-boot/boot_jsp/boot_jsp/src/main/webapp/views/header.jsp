@@ -37,7 +37,7 @@
 						<li style="margin-right: 50px" class="nav-item"><a
 							class="nav-link active" aria-current="page" href="#">HR</a></li>
 						<li style="margin-right: 50px" class="nav-item"><a
-							class="nav-link active" aria-current="page" href="#">Logout</a></li>
+							class="nav-link active" aria-current="page" href="/logout">Logout</a></li>
 					</ul>
 
 				</div>

@@ -22,12 +22,14 @@
 			<div class="mb-3">
 				<label for="exampleFormControlInput1" class="form-label">Username</label>
 				<input type="text" class="form-control"
-					id="exampleFormControlInput1" placeholder="Provide your Username" name="username">
+					id="exampleFormControlInput1" placeholder="Provide your Username"
+					name="username">
 			</div>
 			<div class="mb-3">
 				<label for="exampleFormControlInput1" class="form-label">Password</label>
 				<input type="text" class="form-control"
-					id="exampleFormControlInput1" placeholder="Provide your Password" name="password">
+					id="exampleFormControlInput1" placeholder="Provide your Password"
+					name="password">
 			</div>
 
 			<div class="mb-3">
@@ -43,6 +45,12 @@
 					id="exampleFormControlInput1"
 					placeholder="Provide your Email Address" name="email">
 			</div>
+
+			<select name="role">
+				<option value="Admin">Admin</option>
+				<option value="Employee">Employee</option>
+				<option value="Customer">Customer</option>
+			</select>
 
 			<button style="margin-left: 100px" type="submit"
 				class="btn btn-primary">Register</button>

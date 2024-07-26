@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.example.model.User;
+import com.example.jpa.entity.User;
 import com.example.service.IUserService;
 
 import jakarta.servlet.http.HttpServletRequest;
@@ -52,18 +52,18 @@ public class HomeController {
 //		return "index";
 //	}
 	
-	@PostMapping("/register")
-	public ModelAndView registerUser(User user) {
-		
-		System.out.println("inside register()..."+user.getUsername()+", "+user.getPassword()+", "+user.getCName()+", "+user.getEmail());
-		
-		userService.addUser(user);
-		
-		ModelAndView modelAndView = new ModelAndView("index");
-		modelAndView.addObject("registerSuccess", "Registration Successfull, Now Please Login!!");
-		
-		return modelAndView;
-	}
+//	@PostMapping("/register")
+//	public ModelAndView registerUser(User user) {
+//		
+//		System.out.println("inside register()..."+user.getUsername()+", "+user.getPassword()+", "+user.getCName()+", "+user.getEmail());
+//		
+//		userService.addUser(user);
+//		
+//		ModelAndView modelAndView = new ModelAndView("index");
+//		modelAndView.addObject("registerSuccess", "Registration Successfull, Now Please Login!!");
+//		
+//		return modelAndView;
+//	}
 	
 //	@PostMapping("/login")
 //	public String login(String username, String password) {
@@ -80,28 +80,47 @@ public class HomeController {
 //		return viewName;
 //	}
 	
-	@PostMapping("/login")
-	public ModelAndView login(String username, String password, HttpServletRequest request) {
+//	@PostMapping("/login")
+//	public ModelAndView login(String username, String password, HttpServletRequest request) {
+//		
+//		System.out.println(username+", "+password+", and the request is "+request);
+//		
+//		ModelAndView modelAndView = null;
+//		
+//		User user = userService.login(username, password);
+//		
+//		System.out.println("Role is "+user.getRole());
+//		 if( user != null ) {
+//			 
+//			 HttpSession session = request.getSession();
+//			 System.out.println("session id while login is "+session.getId());
+//			 
+//			 modelAndView = new ModelAndView("welcome_page");
+//			//modelAndView.addObject("loggedInUser", user);
+//			 session.setAttribute("loggedInUser", user);
+//		 }
+//		 else {
+//			 modelAndView = new ModelAndView("index");
+//			 modelAndView.addObject("loginFailedStatus", "Login Failed, Please Try Again!!");
+//		 }
+//		return modelAndView;
+//	}
+	
+	
+	@PostMapping("/register")//With JPA
+	public ModelAndView registerUser(User user) {
 		
-		System.out.println(username+", "+password+", and the request is "+request);
+		System.out.println("inside register()..."+user.getUsername()+", "+user.getPassword()+", "+user.getCName()+", "+user.getEmail()+", "+user.getRole());
 		
-		ModelAndView modelAndView = null;
+		userService.addUser(user);
 		
-		User user = userService.login(username, password);
-		 if( user != null ) {
-			 
-			 HttpSession session = request.getSession();
-			 //System.out.println("session is "+session.getId());
-			 
-			 modelAndView = new ModelAndView("welcome_page");
-			//modelAndView.addObject("loggedInUser", user);
-			 session.setAttribute("loggedInUser", user);
-		 }
-		 else {
-			 modelAndView = new ModelAndView("index");
-			 modelAndView.addObject("loginFailedStatus", "Login Failed, Please Try Again!!");
-		 }
+		ModelAndView modelAndView = new ModelAndView("index");
+		modelAndView.addObject("registerSuccess", "Registration Successfull, Now Please Login!!");
+		
 		return modelAndView;
 	}
+	
+	
+	
 	
 }
