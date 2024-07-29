@@ -1,6 +1,7 @@
 package com.example;
 
-import java.util.List;
+import java.nio.file.attribute.UserPrincipalNotFoundException;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -93,10 +94,46 @@ public class BootJpaApplication implements CommandLineRunner {
 		
 		
 		
-		List<User> users = userRepository.findByPasswordLessThanEqual("12345");
-		users.forEach(user -> System.out.println(user.getName()+", "+user.getPassword()));
+//		List<User> users = userRepository.findByPasswordLessThanEqual("12345");
+//		users.forEach(user -> System.out.println(user.getName()+", "+user.getPassword()));
 		
 		
+		
+//		User user = new User("eileen@1234", "1234", "Eileen");
+//		User user = new User("laurene@1234", null, "Laurene Dai");
+		
+//		User user = new User("1", "laurene@1234", "123", "Laurene Dai");
+//		User user = new User(null, "234", "Jingjing Bai");
+//		
+//		userRepository.save(user);
+		
+		
+		
+		//userRepository.fetchAllUsers().forEach(user -> System.out.println(user.getUsername()+", "+user.getName()));
+		
+		
+		
+		//System.out.println(userRepository.getUser(2).getName());
+		
+		Optional<User> optional = userRepository.fetchUser(2);
+		
+//		if(optional.isPresent()) {
+//			
+//			System.out.println(optional.get().getName());
+//		}
+//		else {
+//			System.out.println("No Record Found");
+//		}
+		
+		//System.out.println(optional.orElseThrow( () -> new UserPrincipalNotFoundException(null) ).getName());
+		
+		
+		
+		
+		
+		
+		
+		//--------------------mapping-----------------------------
 		
 		
 		
