@@ -1,17 +1,17 @@
 package com.example;
 
-import java.util.Optional;
-import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import com.example.entity.Laptop;
-import com.example.entity.Student;
-import com.example.entity.User;
+import com.example.entity.Address;
+import com.example.entity.Person;
 import com.example.repository.LaptopRepository;
+import com.example.repository.PersonRepository;
 import com.example.repository.StudentRepository;
 import com.example.repository.UserRepository;
 
@@ -26,6 +26,9 @@ public class BootJpaApplication implements CommandLineRunner {
 
 	@Autowired
 	LaptopRepository laptopRepository;
+	
+	@Autowired
+	PersonRepository personRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(BootJpaApplication.class, args);
@@ -247,8 +250,32 @@ public class BootJpaApplication implements CommandLineRunner {
 		
 		
 		
-		studentRepository.deleteById("100");
+		//studentRepository.deleteById("100");
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		//------------------OneToMany------------------
+		
+		
+		Person person = new Person("p_1", "Jing", null);
+		
+		Address address1 = new Address("a_1", "Shanghai", person);
+		Address address2 = new Address("a_2", "Beijing", person);
+		
+		List<Address> addresses = new ArrayList<>();
+		addresses.add(address1);   addresses.add(address2);
+		
+		person.setAddresses(addresses);
+		
+		
+		personRepository.save(person);
 		
 		
 		
