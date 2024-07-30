@@ -29,4 +29,9 @@ public class ContactDAO {
 		
 		return contacts.stream().filter(contact -> contact.getUserId().equals(userId)).findFirst();
 	}
+	
+	public List<Contact> allContacts() {
+		
+		return contacts;
+	}
 }

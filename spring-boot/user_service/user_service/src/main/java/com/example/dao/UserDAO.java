@@ -29,4 +29,9 @@ public class UserDAO {
 		return users.stream().filter(user -> user.getUserId().equals(userId)).findFirst();
 		
 	}
+	
+	public List<User> allUsers() {
+		
+		return users;
+	}
 }

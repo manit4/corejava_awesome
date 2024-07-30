@@ -1,5 +1,7 @@
 package com.example.controller;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,12 +36,27 @@ public class UserController {
 			
 			user = optional.get();
 			
-			Contact contact = restTemplate.getForObject("http://localhost:8081/getContact/"+userId, Contact.class);
+//			Contact contact = restTemplate.getForObject("http://localhost:8081/getContact/"+userId, Contact.class);
+			Contact contact = restTemplate.getForObject("http://contact-service/getContact/"+userId, Contact.class);
 			System.out.println("contact is "+contact.getContactId()+", "+contact.getCity());
 			user.setContact(contact);
 		}
 		
 		return user;
+	}
+	
+	@GetMapping("/allUsers")
+	public List<User> getAllUsers() {
+		
+		List<User> users = userDAO.allUsers();
+		
+		ArrayList<Contact> contacts = restTemplate.getForObject("http://localhost:8081/allContacts", ArrayList.class);
+		
+		System.out.println("size is "+contacts.size());
+		
+		contacts.forEach(con -> System.out.println(con));
+		
+		return users;
 	}
 
 }
