@@ -1,0 +1,48 @@
+
+Project Name -ShopForHomeProblem
+
+Statement:ShopForHome is a popular Store in the market for shopping home décor stuff . Due toCovid 19 all the offline shopping stopped. So the store wants to move to online platforms and wants their own web application.
+
+There are 2 users on the application :-
+1.User
+2.Admin
+
+UserStories–
+1.As a user I should be able to login, Logout and Register into the application.
+2.As a user I should be able to see the products in different categories.
+3.As a user I should be able to sort the products.
+4.As a user I should be able to add the products into the shopping cart.
+5.As a user I should be able to increase or decrease the quantity added in the cart.
+6.As a user I should be able to add “n” number of products in the cart.
+7.As a user I should be able to get the wishlist option where I can add those product which I want but don’t want to order now.
+8.As a user I should get different discount coupons
+
+Admin Stories –
+1.As an Admin I should be able to login, Logout and Register into the application.
+2.As an Admin I should be able to perform CRUD on Users.
+3.As an Admin I should be able to Perform CRUD on the products.
+4.As an Admin I should be able to get a bulk upload option to upload a CSV for products details.
+5.As an Admin I should be able to get the stocks.
+6.As an Admin I should be able to mail if any stock is less than 10
+7.As an Admin I should be able to get the sales report of a specific duration.
+8.As an Admin I should be able to set the discount coupons for the specific set of users
+
+Instructions –
+1.Please use a folder on server to upload the images.
+2.Please share the database structure in the .sql file.
+3.Please create a separate microservice for reports and discount coupons.
+4.Please use separate port to deploy the Spring Boot Microservice.
+5.Please use the UI designing tool like(Bootstrap) to make your UI better.
+
+For Reference please visit :-https://www.pepperfry.com/
+
+Sprint Plan:
+
+Sprint I Objectives:1.Create Git Repository2.Create Database schema (All tables along with their relationship)3.Create entities in Spring4.Create a microservices based structure5.CRUD on User and Product6.Create an ecommerce Template in JSP(Static Only) to hold images and Product list.
+
+Sprint II Objectives:1.Develop search functionality in JSP View.
+2.Bulk upload implementation
+3.Cart option
+4.Stock and sales reports
+
+Sprint III Objectives:1.Create Data Transfer Objects2.Create repository3.Create a service layer and logic4.Create controller a direct rest api5.Create Discount Microservice

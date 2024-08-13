@@ -1,0 +1,62 @@
+
+Capstone Project:
+
+Project Name: RentAPlace
+
+Problem Statement:RentAPlace is an online store to rent the home for short and long-time duration.
+
+There are 2 users on the application:
+1.User
+2.Owner
+
+##User Stories:
+1.As a user, I should be able to log in, log out and register into the application.
+2.As a user, I should be able to see the top-rated properties in different categories.
+3.As a user, I should be able to search property as per the different search criteria’s as:-
+a.check-in and check-out date
+b.Place to visit
+c.Type of property like( flat, villas, apartments)
+d.Features pool, pool facing, beach, beach facing, garden, garden facing and many more
+4.As a User, I should be able to see the selected properties in list or card view
+5.As a user, I should be able to see 4 to 5 pic. of each property
+6.As a user, I should be able to reserve the property
+7.As a user, I should be able to send message on the application to the owner
+
+##Owner Stories:
+1.As an Owner, I should be able to log in, logout, and register into the application
+2.As an Owner, I should be able to add the properties on the platform. Properties can be more than one.
+3.As an Owner, I should be able to update, delete and get the properties
+4.As an Owner, I should be able to see the messages of the users
+5.As an owner, I should be able to reply on the messages
+6.As an owner, I should be able to get mail as soon as the user reserved a property
+7.As an Owner, I should be able to confirm to the reservedstatus.
+
+##Instructions:
+1.Please use a folder on the server to upload the images
+2.Please share the database structure in the .sql file
+3.Please create a separate microservice for sending and receiving messages.4.Please use the separate port to deploy the Spring Boot Microservices.
+5.Please use the UI designing tool like (Bootstrap) to make your UI Better.
+
+Reference: Please refer this link: https://www.airbnb.co.in/
+
+Sprint Plan:
+Sprint I Objectives:
+1.Create git repository
+2.Create database schema (all tables along with their relationships)
+3.Create entities in Spring
+4.Create Microservice based structure
+5.CRUD on User and Owner
+6.Create template in JSP(Static Only) to hold the images and property lists
+
+Sprint II Objectives:
+1.Develop Search functionality in JSP view.
+2.The property CRUD for owner
+3.Owner confirm module
+4.Owner Mail Module
+
+Sprint III Objectives:
+1.Create Data Transfer Objects
+2.Create Repository
+3.Create Service Layer logic
+4.Create controller to direct API
+5.Create Message Microservice.

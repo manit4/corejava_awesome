@@ -1,0 +1,20 @@
+Course Catalog Service
+
+## Problem Statement
+Course Catalog is an application using which anyone can get all the courses ratings and comments given 
+by the enrolled participant.
+
+## User Stories
+
+1. As a user I can get all the course details by passing user Id.
+
+## Instructions: -
+
+1. Create 3 microservices (Course catalog, EnrolledCourse, CourseRating)
+2. Course Rating (microservice) must have ratings and comments
+3. Course Rating (microservice) can return ratings and comments on base of courseID
+4. Enrolled Course (microservice) contains userId, CourseId.
+5. Enrolled Course (microservice) returns CourseIds (one or more) mapped with userId.
+6. Make request to course catalog microservice with userId.
+7. Course catalog will pass that UserId to EnrolledCourses and get Course Ids.
+8. Get Ratings and comments from courseRating microservice by passing course Ids
