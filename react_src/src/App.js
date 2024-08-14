@@ -1,5 +1,7 @@
 import './App.css';
-import Header from './components/header';
+import Body from './components/body';
+import Footer from './components/footer';
+import Header from './components/header'; 
 
 
 function App() {
@@ -14,6 +16,9 @@ function App() {
 
       <h1>Hi, this is My First React App and the size of array is {names.length}</h1>
       <h1>Hi, this is My First React App</h1>
+
+      <Body />
+      <Footer />
     </div>
   )
 }
