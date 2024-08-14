@@ -1,6 +1,7 @@
 import React from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { Button } from "reactstrap";
+import AllProducts from "./AllProducts";
 
 function Body() {
 
@@ -26,6 +27,9 @@ function Body() {
                     theme: "dark"
                     })
             }}>Click Me</Button>
+
+<AllProducts />
+
         </div>
     )
 }
