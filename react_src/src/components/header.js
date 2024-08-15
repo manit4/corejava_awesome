@@ -2,30 +2,42 @@ import React from "react";
 
 function Header() {
 
-    var data = [
-        {
-            username:'abc',
-            password:'123',
-            name:'Manit'
-        },
-        {
-            username:'bcd',
-            password:'234',
-            name:'Manu'
-        }
-    ]
-
     return (
         <div>
-           
-           {
-            data.map((item) =>
-            <h1>{item.name}</h1>)
-           }
+            <h1> I am Header Component</h1>
 
         </div>
     )
 }
+
+
+
+// function Header() {
+
+//     var data = [
+//         {
+//             username:'abc',
+//             password:'123',
+//             name:'Manit'
+//         },
+//         {
+//             username:'bcd',
+//             password:'234',
+//             name:'Manu'
+//         }
+//     ]
+
+//     return (
+//         <div>
+           
+//            {
+//             data.map((item) =>
+//             <h1>{item.name}</h1>)
+//            }
+
+//         </div>
+//     )
+// }
 
 
 
