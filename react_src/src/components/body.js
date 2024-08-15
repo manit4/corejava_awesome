@@ -1,14 +1,47 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import { Button } from "reactstrap";
 import AllProducts from "./AllProducts";
+import axios from "axios";
 
 function Body() {
+
+    const [products, setProducts] = useState([]);
+
+    var name = 'Manit'
+
+    useEffect(() => {
+       fetchAllProducts();
+       console.log('Name is '+name)
+       name = 'Manu';
+       console.log('afte setting '+name);
+    },[])
+
+    function fetchAllProducts() {
+        axios.get("http://localhost:8080/allProducts").then(
+            (response) => {
+                console.log(response)
+                setProducts(response.data);
+                console.log(products)
+            },
+            (error) => {
+                console.log(error)
+            }
+        );
+    }
 
     return ( 
 
         <div>
-            <h1>I am Body Component</h1>
+            <h1>I am Body Component and the name is {name}</h1>
+
+            {
+
+                products.map((item) => (
+                    <h1>{item.productId}</h1>
+                ))
+            }
+
         </div>
     )
 }
