@@ -22,10 +22,16 @@ function Body() {
             (response) => {
                 console.log(response)
                 setProducts(response.data);
-                console.log(products)
+                console.log(products);
+                toast.success('Products Available...',
+                    {
+                        position:'bottom-center'
+                    }
+                )
             },
             (error) => {
                 console.log(error)
+                toast.error('Internal Server Error...')
             }
         );
     }
@@ -34,6 +40,7 @@ function Body() {
 
         <div>
             <h1>I am Body Component and the name is {name}</h1>
+            <ToastContainer />
 
             {
 
