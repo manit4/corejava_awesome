@@ -8,6 +8,8 @@ import Menu from './components/Menu';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import AddEmployee from './components/AddEmployee';
 import AddCategory from './components/AddCategory';
+import Hooks from './components/hooks';
+import { useEffect } from 'react';
 
 
 function App() {
@@ -19,6 +21,7 @@ function App() {
         <Header />
           <Row>
             <Col md={4}><Menu /></Col>
+            {/* <Hooks /> */}
             
             <Col md={8}>
             <Routes>
