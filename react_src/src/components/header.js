@@ -1,11 +1,12 @@
 import React from "react";
+import { Button } from "reactstrap";
+import { isLoggedIn } from "../services/user-service";
 
 function Header() {
 
     return (
-        <div>
+        <div id="headerDiv">
             <h1> I am Header Component</h1>
-
         </div>
     )
 }

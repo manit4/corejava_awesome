@@ -8,6 +8,7 @@ const Menu = () => {
 
         <ListGroup>
             <Link className="list-group-item" tag="a" to="/">Home</Link>
+            <Link className="list-group-item" tag="a" to="/login">Login</Link>
             <Link className="list-group-item" tag="a" to="/product">Product</Link>
             <Link className="list-group-item" tag="a" to="/employee">Employee</Link>
             <Link className="list-group-item" tag="a" to="/category">Category</Link>

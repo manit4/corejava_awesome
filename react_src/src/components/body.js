@@ -4,13 +4,14 @@ import { Button } from "reactstrap";
 import AllProducts from "./AllProducts";
 import axios from "axios";
 import { getProducts, removeProduct } from "../services/ProductService";
-
-
+import { Navigate, useNavigate } from "react-router-dom";
 
 
 function Body() {
 
     const [products, setProducts] = useState([]);
+
+    const navigate = useNavigate();
 
     useEffect(() => {
        fetchAllProducts();
@@ -42,7 +43,6 @@ function Body() {
                            console.log(response.data)
                            toast.error("Product Deleted")
                            fetchAllProducts();
-
                         },
                         (error) => {
                              console.log(error.data)

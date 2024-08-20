@@ -1,9 +1,35 @@
 import axios from "axios";
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import { Button, Form, FormGroup, Input, Label } from "reactstrap";
+import { isLoggedIn } from "../services/login-service";
 
 const AddProduct = () => {
+
+    var navigate = useNavigate();
+
+    useEffect(() => {
+
+        console.log('Token fetched is '+localStorage.getItem('token'))
+
+        setTimeout(() => {
+                console.log('timeout()')
+                if(!isLoggedIn()) {
+
+                    navigate("/login");
+                }
+        }, 5000)
+
+        console.log('after timeout')
+
+        // if(!isLoggedIn()) {
+
+        //     navigate("/login");
+        // }
+        console.log('after if...')
+        
+    })
 
     var product = {};
 

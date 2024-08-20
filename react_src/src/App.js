@@ -10,6 +10,11 @@ import AddEmployee from './components/AddEmployee';
 import AddCategory from './components/AddCategory';
 import Hooks from './components/hooks';
 import { useEffect } from 'react';
+import { name } from './services/Test';
+import { BASE_URL } from './services/ProductService';
+import Index from './components/Index';
+import Login from './components/Login';
+import { Xi } from './components/xi';
 
 
 function App() {
@@ -19,6 +24,7 @@ function App() {
       <BrowserRouter>
         <Container>
         <Header />
+        <Xi />
           <Row>
             <Col md={4}><Menu /></Col>
             {/* <Hooks /> */}
@@ -26,6 +32,7 @@ function App() {
             <Col md={8}>
             <Routes>
             <Route path='/' Component={Body} />
+            <Route path='/login' Component={Login} />
             <Route path='/product' Component={AddProduct} />
             <Route path='/employee' Component={AddEmployee} />
             <Route path='/category' Component={AddCategory} />
