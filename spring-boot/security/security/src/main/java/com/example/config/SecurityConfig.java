@@ -1,7 +1,9 @@
 package com.example.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -34,8 +36,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //				.antMatchers("/user/message").hasRole("Employee")
 //				.antMatchers("/user/getUser/**").hasRole("Admin")
 			
-			.antMatchers("/user/registerr").permitAll()
-			.antMatchers("/user/message").hasRole("Admin")
+			.antMatchers("/user/registerr", "/allProducts", "/allEmployees", "/user/message", "/token").permitAll()
+			//.antMatchers("/user/message").hasRole("Admin")
 					.anyRequest()
 						.authenticated()
 								.and()
@@ -57,8 +59,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		auth.userDetailsService(customUserDetailsService);
 		
-	}	
+	}
+	
+	@Bean
+	public AuthenticationManager authenticationManager() throws Exception {
+		
+		return super.authenticationManager();
+	}
 }
+
+	
 
 
 

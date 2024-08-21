@@ -3702,3 +3702,4 @@
 2024-08-19 23:58:17,970 [Worker-92: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Manit Hira\Downloads\awesome_batch\react_integration\react_integration\src\test\resources
 2024-08-20 20:33:14,946 [Worker-121: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource from src\main\resources to target\classes
 2024-08-20 20:33:15,066 [Worker-121: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src\main\resources to target\classes
+2024-08-20 20:33:15,071 [Worker-121: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory C:\Users\Manit Hira\Downloads\awesome_batch\react_integration\react_integration\src\test\resources
