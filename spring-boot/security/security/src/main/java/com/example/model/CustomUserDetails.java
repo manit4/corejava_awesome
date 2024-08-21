@@ -9,6 +9,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import com.example.entity.User;
 
+import lombok.ToString;
+
+@ToString
 public class CustomUserDetails implements UserDetails {
 
 	User user;

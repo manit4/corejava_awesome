@@ -9,8 +9,11 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+import com.example.helper.JWTAuthenticationFilter;
 import com.example.service.CustomUserDetailsService;
 
 
@@ -24,6 +27,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
 	CustomUserDetailsService customUserDetailsService;
+	
+	@Autowired
+	JWTAuthenticationFilter authenticationFilter;
 	
 	protected void configure(HttpSecurity http) throws Exception {
 		
@@ -41,7 +47,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 					.anyRequest()
 						.authenticated()
 								.and()
-									.httpBasic();
+									//.httpBasic();
+								.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
 	}
 	
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
