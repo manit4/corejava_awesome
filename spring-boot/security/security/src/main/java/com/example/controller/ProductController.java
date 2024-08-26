@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
@@ -28,14 +29,36 @@ public class ProductController {
 		Product product4 = new Product("p_04", "IPhone", "450", "Electronics");
 		
 		//products = List.of(product1, product2, product3, product4);
-		products = new CopyOnWriteArrayList<>();
+		products = new ArrayList<>();
 		products.add(product1);    products.add(product2);  products.add(product3);   products.add(product4);
 	}
+	
+//	@GetMapping("/allProducts")
+//	public ResponseEntity<APIResponse>allProducts() throws InterruptedException {
+//		
+//		
+//			if( products.size() == 0 ) {
+//				//return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+//				//return ResponseEntity.status(403).body(null);
+//				
+//				
+//				return ResponseEntity.status(239).body(new APIResponse(null, "dfvfvdf"));
+//			}
+//			else {
+//				
+//				
+//				return ResponseEntity.of(Optional.of(new APIResponse(products, "All The Products are")));
+//				
+//			} 
+//	}
+	
+	
+	
 
 	@GetMapping("/allProducts")
 	public List getAllProducts() throws InterruptedException {
 		
-		System.out.println("Inside getAllProducts()...");
+		System.out.println("Inside getAllProducts()... andthe header is ");
 		
 		return products;
 	}
@@ -68,7 +91,9 @@ public class ProductController {
 			if(product.getProductId().equals(productId)) {
 				products.remove(product);
 			}
+			
 		}
+		
 		
 		return "Product Deleted and the size is "+products.size();
 	}

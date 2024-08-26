@@ -13,10 +13,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.helper.JWTHelper;
 import com.example.model.JWTRequest;
+import com.example.model.JWTResponse;
 import com.example.service.CustomUserDetailsService;
 
 
 @RestController
+@CrossOrigin
 public class JWTTokenController {
 	
 	@Autowired
@@ -40,6 +42,8 @@ public class JWTTokenController {
 		UserDetails userDetails = customUserDetailsService.loadUserByUsername(jwtRequest.getUsername());
 		
 		token = jwtHelper.generateToken(userDetails);
+		
+//		JWTResponse jwtResponse = new JWTResponse(token);
 		
 		return token;
 		

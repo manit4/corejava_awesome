@@ -20,6 +20,8 @@ public class EmployeeController {
 		
 		List employees = List.of(employee1, employee2);
 		
+		System.out.println("insdie allEmployees()...");
+		
 		return employees;
 	}
 

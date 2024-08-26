@@ -1,6 +1,7 @@
 package com.example.helper;
 
 import java.io.IOException;
+import java.util.Iterator;
 
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
@@ -13,6 +14,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 import com.example.service.CustomUserDetailsService;
@@ -27,13 +29,19 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
 	CustomUserDetailsService customUserDetailsService;
 
 	@Override
-	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
+	protected void doFilterInternal( HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
 		
+		System.out.println("insdie first of Filter...");
+		
+		
 		String tokenHeader =  request.getHeader("Authorization");
+		System.out.println("token header is "+tokenHeader);
 		
 		String token = null;
 		String username = null;
+		
+		System.out.println("inside filter...");
 		
 		
 		if (tokenHeader != null && tokenHeader.startsWith("Bearer ")) {
@@ -56,10 +64,10 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
 
 				SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
 			} else {
-				System.out.println();
+				System.out.println("insdie else of filter");
 			}
-			filterChain.doFilter(request, response);
 		}
+		filterChain.doFilter(request, response);
 	}
 	
 	
